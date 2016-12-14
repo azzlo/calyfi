@@ -1,11 +1,13 @@
-<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <%= render 'partials/header' %>
 
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<div>
-  <p><%= current_user.email %> -
-    <% if user_signed_in? %> <%= link_to("Salir", destroy_user_session_path , method: :delete) %> <% end %>
-  </p>
+
+
+
+
+
+
+  </div>
 </div>
-
 <%= render 'partials/footer' %>
