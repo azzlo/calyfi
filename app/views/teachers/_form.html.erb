@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="field espaciado">
+    <%= f.label :nombre, class:"colorTextoCuatro"%>
+    <%= f.text_field :name, class:"colorBorderUno"%>
   </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+  <div class="field espaciado">
+    <%= f.label :Apellido_paterno, class:"colorTextoCuatro" %>
+    <%= f.text_field :last_name, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :mothers_last_name %>
-    <%= f.text_field :mothers_last_name %>
+  <div class="field espaciado">
+    <%= f.label :Apellido_materno, class:"colorTextoCuatro" %>
+    <%= f.text_field :mothers_last_name, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :perfil %>
-    <%= f.text_area :perfil %>
+  <div class="field espaciado">
+    <%= f.label :perfil, class:"colorTextoCuatro" %>
+    <%= f.text_area :perfil, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+  <div class="field espaciado">
+    <%= f.label :usuario, class:"colorTextoCuatro" %>
+    <%= f.text_field :user_id, class:"colorBorderUno" %>
   </div>
 
-  <div class="actions">
+  <div class="actions espaciado">
     <%= f.submit %>
   </div>
 <% end %>
