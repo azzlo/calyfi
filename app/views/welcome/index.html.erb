@@ -11,46 +11,55 @@
 
     <%= render 'partials/header' %>
     <br><br><br>
-    <div class="row">
-      <div class="col-md-4">
-        <%= image_tag "logo.png", class:'Wfoto' %>
-      </div>
-      <div class="col-md-4">
-        <h5>Datos Generales del Docente</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <h5>Semestre Actual</h5>
-        <p>
-          Lorem ipsum dolor sit amet,
-        </p>
 
-      </div>
-      <div class="col-md-4">
-        <%= image_tag "logo.png", class:'Wlogo' %>
-      </div>
+    <% if current_user.admin_role %>
 
-    </div>
-    <br><br>
-    <div class="row">
-      <div class="col-md-8">
-        <div class="list-group">
-          <button type="button" class="list-group-item list-group-item-action active">
-            Grupos a Cargo
-          </button>
-          <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-          <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-          <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-          <button type="button" class="list-group-item list-group-item-action disabled">Vestibulum at eros</button>
+      <%= link_to "Administrar Cuentas", teachers_path %>
+
+    <% else %>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= image_tag "logo.png", class:'Wfoto' %>
+        </div>
+        <div class="col-md-4">
+          <h5>Datos Generales del Docente</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <h5>Semestre Actual</h5>
+          <p>
+            Lorem ipsum dolor sit amet,
+          </p>
+
+        </div>
+        <div class="col-md-4">
+          <%= image_tag "logo.png", class:'Wlogo' %>
         </div>
 
       </div>
-      <div class="col-md-4">
 
+      <br><br>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active">
+              Grupos a Cargo
+            </button>
+            <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+            <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+            <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+            <button type="button" class="list-group-item list-group-item-action disabled">Vestibulum at eros</button>
+          </div>
 
+        </div>
+        <div class="col-md-4">
+
+        </div>
       </div>
 
-    </div>
+    <% end %>
+
 
 
     <br><br>
