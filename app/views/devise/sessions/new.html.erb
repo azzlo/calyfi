@@ -1,64 +1,66 @@
-
-  <div class="contenedor-principal">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="margenes">
-      <div class="row">
-        <div class="col-md-2">
-          <img src="images/LogoSep.png" alt="" />
-        </div>
-        <div class="col-xs-12 col-md-8 text-center">
-          <h4>Centro de Bachillerato Tecnologico Agropecuario No.152 "Lauro L. Mendez"</h4>
-        </div>
-        <div class="col-md-2">
-          <img src="images/LogoSep.png" alt="" />
-        </div>
+<div class="contenedor-principal">
+  <% if flash[:notice] %>
+  <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if flash[:alert] %>
+  <p class="alert"><%= alert %></p>
+  <% end %>
+  <div class="margenes">
+    <div class="row login-header">
+      <div class="col-md-2">
+        <%= image_tag "logo-sep" %>
       </div>
-      <div class="row ">
-        <div class="col-md-10 align-middle">
-          <h2 class="text-center">Competencias Genéricas para la Educacion Media Superior</h2>
-          <img src="images/LogoSep.png" alt="" />
-        </div>
+      <div class="col-xs-12 col-md-8 text-center">
+        <h4>Centro de Bachillerato Tecnologico Agropecuario No.152 "Lauro L. Mendez"</h4>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="images/LogoSep.png" alt="" />
-        </div>
-        <div class="col-xs-12 col-md-4 ">
-
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class:"colorTextoCuatro"}) do |f| %>
-            <div class="form-group row">
-              <div class="field espaciado">
-                <%= f.label :Usuario%>
-                <%= f.email_field :email, autofocus: true, class:"colorBorderUno"%>
-              </div>
-              <div class="field espaciado">
-                <%= f.label :Contraseña %>
-                <%= f.password_field :password, autocomplete: "off", class:"colorBorderUno"%>
-              </div>
-
-              <% if devise_mapping.rememberable? -%>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
-              </div>
-              <% end -%>
-
-              <div class="actions espaciado">
-                <%= f.submit "Ingresar",class:"btn colorBackgroundTres colorTextoCinco"%>
-              </div>
-              <% end %>
-
-              <%= render "devise/shared/links" %>
-            </div>
-        </div>
-        <div class="col-md-4">
-          <img src="images/LogoSep.png" alt="" />
-        </div>
+      <div class="col-md-2">
+        <%= image_tag "logo-sems" %>
       </div>
-
-
+    </div>
+    <div class="row text-center login-main">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h2 class="text-center">Competencias Genéricas para la Educacion Media Superior</h2>
+        <%= image_tag "logo.png" %>
+      </div>
+      <div class="col-md-2"> </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-2">
+        <%= image_tag 'logo-snb', class: 'img-fw' %>
+      </div>
+      <div class="col-xs-12 col-md-8 text-right ">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class:"colorTextoCuatro"}) do |f| %>
+        <div class="form-group row">
+          <div class="field espaciado">
+            <%= f.label :Usuario%>
+            <%= f.email_field :email, autofocus: true, class:"colorBorderUno"%>
+          </div>
+          <div class="field espaciado">
+            <%= f.label :Contraseña %>
+            <%= f.password_field :password, autocomplete: "off", class:"colorBorderUno"%>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+          <% end -%>
+
+          <div class="actions espaciado">
+            <%= f.submit "Ingresar",class:"btn colorBackgroundTres colorTextoCinco"%>
+          </div>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <%= image_tag 'logo-dgeta', class: 'img-fw' %>
+      </div>
     </div>
-      <%= render 'partials/footer' %>
+  </div>
+</div>
+<%= render 'partials/footer' %>

@@ -20,55 +20,49 @@ body{
   margin: 0;
   padding: 0;
 }
+footer{
+  padding-bottom: 1em;
+}
+footer p{
+  font-size: 14px;
+  margin-bottom: 0;
+}
+h1{
+  font-size: 28px;
+  color: #DB3A4E;
+}
+h2{
+  font-size: 26px;
+  color: #8D2C3F;
+  text-align: center;
+}
+h3{
+  font-size: 24px;
+  color: #0F363E;
+}
+h4{
+  font-size: 22px;
+  color: #177175;
+  text-align: center;
+}
+h5{
+  font-size: 20px;
+  color: #8EC09A;
+}
+h6{
+  font-size: 18px;
+  color: #0F363E;
+}
+p{
+  font-size: 18px;
+  font-weight: 500;
+}
 .contenedor-principal{
   background-color: white;
   margin-left: 5%;
   margin-right: 5%;
   margin-top:0;
 
-}
-.margenes{
-  margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 1%;
-  padding: 20px;
-}
-.espaciado{
-  margin: 10px;
-}
-.nombre-usuario{
-  text-align: right;
-}
-h1{
-font-size: 28px;
-color: #DB3A4E;
-}
-h2{
-font-size: 26px;
-color: #8D2C3F;
-text-align: center;
-}
-h3{
-font-size: 24px;
-  color: #0F363E;
-}
-h4{
-font-size: 22px;
-color: #177175;
-text-align: center;
-}
-h5{
-font-size: 20px;
-  color: #8EC09A;
-}
-h6{
-font-size: 18px;
-  color: #0F363E;
-}
-p{
-font-size: 18px;
-font-weight: 500;
 }
 
 .colorTextoUno{
@@ -120,4 +114,39 @@ font-weight: 500;
 }
 .colorBorderCinco{
   border: 1px solid #8EC09A;
+}
+.espaciado{
+  margin: 10px;
+}
+
+.img-fw {
+  width: 100%
+}
+
+.login-header img {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.login-main img{
+  width: 40%;
+}
+
+.margenes{
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 1%;
+  padding: 20px;
+}
+.nombre-usuario{
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
