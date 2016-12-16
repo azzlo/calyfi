@@ -1,35 +1,78 @@
-<p id="notice"><%= notice %></p>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <p id="notice"><%= notice %></p>
+    <%= render 'partials/header' %>
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class="centrar-texto">Profesores en el sistema</h5>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-10">
+        <table class="table table-hover">
+          <thead class="colorBackgroundTres colorTextoCinco">
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Apellido Paterno</th>
+              <th>Apellido Materno</th>
+              <th>Perfil</th>
+              <th>Usuario</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody class="">
+            <% @teachers.each do |teacher| %>
+            <tr>
+              <th scope="row">1</th>
+              <td><%= teacher.name %></td>
+              <td><%= teacher.last_name %></td>
+              <td><%= teacher.mothers_last_name %></td>
+              <td><%= teacher.perfil %></td>
+              <td><%= teacher.user %></td>
+              <td><%= link_to 'Show', teacher %></td>
+              <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+              <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        </div>
 
-<h1>Teachers</h1>
+      </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <%= link_to 'Nuevo Profesor', new_teacher_path, class:"btn colorBackgroundTres colorTextoCinco" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Last name</th>
-      <th>Mothers last name</th>
-      <th>Perfil</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      </div>
 
-  <tbody>
-    <% @teachers.each do |teacher| %>
-      <tr>
-        <td><%= teacher.name %></td>
-        <td><%= teacher.last_name %></td>
-        <td><%= teacher.mothers_last_name %></td>
-        <td><%= teacher.perfil %></td>
-        <td><%= teacher.user %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </div>
+    <br><br>
+    <div class="row">
 
-<br>
+      <div class="col-md-3">
+        <%= image_tag "logo-sep", class:'Wsep'%>
+      </div>
+      <div class="col-md-3">
+          <%= image_tag 'logo-dgeta', class: 'Wdgeta' %>
+      </div>
 
-<%= link_to 'New Teacher', new_teacher_path %>
+      <div class="col-md-3">
+        <%= image_tag "logo-sems", class:'Wsems' %>
+      </div>
+
+      <div class="col-md-3">
+        <%= image_tag 'logo-snb', class: 'Wsnb' %>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</div>
+<%= render 'partials/footer' %>
