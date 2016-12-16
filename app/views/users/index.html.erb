@@ -1,0 +1,26 @@
+<h1>Users#index</h1>
+<% if flash[:notice] %>
+<p class="notice"><%= notice %></p>
+<% end %>
+<% if flash[:alert] %>
+<p class="alert"><%= alert %></p>
+<% end %>
+<p>Find me in app/views/users/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @administrators.each do |admin| %>
+    <tr>
+      <td><%= admin.email %></td>
+      <td><%= link_to 'Editar', edit_user_path(admin) %></td>
+      <td><%= link_to 'Eliminar', admin, method: :delete, data: {confirm: '¿Estas seguro?'}  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

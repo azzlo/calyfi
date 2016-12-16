@@ -14,7 +14,8 @@
 
     <% if current_user.admin_role %>
 
-      <%= link_to "Administrar Cuentas", teachers_path %>
+      <%= link_to "Administradores", users_path %>
+      <%= link_to "Profesores", teachers_path %>
 
     <% else %>
 
