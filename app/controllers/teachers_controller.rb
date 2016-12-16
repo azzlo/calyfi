@@ -14,7 +14,8 @@ class TeachersController < ApplicationController
 
   # GET /teachers/new
   def new
-    @teacher = Teacher.new
+    @user = User.new
+    @teacher = @user.build_teacher
   end
 
   # GET /teachers/1/edit
@@ -24,7 +25,9 @@ class TeachersController < ApplicationController
   # POST /teachers
   # POST /teachers.json
   def create
-    @teacher = Teacher.new(teacher_params)
+    @user = User.new(user_params)
+    @teacher = @user.build_teacher(teacher_params)
+    #@teacher = Teacher.new(teacher_params)
 
     respond_to do |format|
       if @teacher.save
@@ -69,6 +72,13 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :last_name, :mothers_last_name, :perfil, :user_id)
+      params.require(:teacher).permit(:name, :last_name, :mothers_last_name, :perfil, :user_id, user_attributes: [:email, :password, :password_confirmation])
+    end
+
+    def user_params
+      params.require(:teacher).require(:users).require(:email)
+      params.require(:teacher).require(:users).require(:password)
+      params.require(:teacher).require(:users).require(:password_confirmation)
+      params.require(:teacher).require(:users).permit(:email, :password, :password_confirmation)
     end
 end

@@ -11,6 +11,25 @@
     </div>
   <% end %>
 
+  <%= f.fields_for :users do |u| %>
+    <div class="field espaciado">
+      <%= u.label :email %>
+      <%= u.email_field :email, autofocus: true %>
+    </div>
+    <div class="field espaciado">
+      <%= u.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <%= u.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field espaciado">
+      <%= u.label :password_confirmation %>
+      <%= u.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  <% end %>
+
   <div class="field espaciado">
     <%= f.label :nombre, class:"colorTextoCuatro"%>
     <%= f.text_field :name, class:"colorBorderUno"%>

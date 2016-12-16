@@ -1,6 +1,16 @@
 <header>
-
-      <h4>Centro de Bachillerato Tecnologico Agropecuario No.152 "Lauro L. Mendez"</h4>
-      <h2 class="text-center">Competencias Genéricas para la Educacion Media Superior</h2>
-
+  <nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="<%= root_path	 %>">
+    <img src="<%= asset_path 'logo.png' %>" width="30" height="30" class="d-inline-block align-top" alt="">
+    C.B.T.A 152
+  </a>
+  <div class="nombre-usuario">
+    <% if user_signed_in? %>
+      <span>
+        <%= current_user.email %> -
+        <%= link_to("Salir", destroy_user_session_path , method: :delete) %>
+      </span>
+    <% end %>
+  </div>
+  </nav>
 </header>

@@ -1,16 +1,17 @@
-<h1>Users#index</h1>
+<%= render 'partials/header' %>
+<h1>Administradores del sistema</h1>
 <% if flash[:notice] %>
 <p class="notice"><%= notice %></p>
 <% end %>
 <% if flash[:alert] %>
 <p class="alert"><%= alert %></p>
 <% end %>
-<p>Find me in app/views/users/index.html.erb</p>
-<table>
-  <thead>
+<p><%= link_to 'Nuevo Administrador', new_user_url, class: "btn btn-primary" %></p>
+<table class="table">
+  <thead class="thead-inverse">
     <tr>
       <th>Email</th>
-      <th colspan="2"></th>
+      <th colspan="2">Acciones</th>
     </tr>
   </thead>
 
@@ -24,3 +25,4 @@
     <% end %>
   </tbody>
 </table>
+<%= render 'partials/footer' %>

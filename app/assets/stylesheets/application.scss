@@ -21,10 +21,13 @@ body{
   padding: 0;
 }
 footer{
+  background: #353535;
+  color: white;
+  padding-top: 1em;
   padding-bottom: 1em;
 }
 footer p{
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 0;
 }
 h1{
@@ -62,7 +65,7 @@ p{
   margin-left: 5%;
   margin-right: 5%;
   margin-top:0;
-
+  overflow: hidden;
 }
 
 .colorTextoUno{
@@ -119,8 +122,16 @@ p{
   margin: 10px;
 }
 
+.fh {
+  height: 100%;
+}
+
 .img-fw {
   width: 100%
+}
+
+.img-fh {
+  height: 100%;
 }
 
 .login-header img {
@@ -139,8 +150,18 @@ p{
   margin-bottom: 1%;
   padding: 20px;
 }
+
+.navbar {
+  box-shadow: 0 1px 8px grey;
+}
+
 .nombre-usuario{
   text-align: right;
+  line-height: 40px;
+}
+
+.semifooter {
+  height: 60px;
 }
 
 .text-center {
@@ -150,26 +171,12 @@ p{
 .text-right {
   text-align: right;
 }
-.Wsep{
-  width: 50%;
-  height: auto;
-}
-.Wdgeta{
-  width: 50%;
-  height: 80px;
-}
-.Wsems{
-  width: 50%;
-  height: auto;
-}
-.Wsnb{
-  width: 50%;
-  height: auto;
-}
+
 .Wlogo{
   width: 90%;
   height: auto;
 }
+
 .centrar-texto{
   text-align: center;
 }

@@ -1,21 +1,47 @@
+<%= render 'partials/header' %>
 <div class="contenedor-principal">
   <div class="margenes">
-    <div class="row nombre-usuario">
-      <div class="col-md-12">
-        <p><%= current_user.email %> -
-          <% if user_signed_in? %> <%= link_to("Salir", destroy_user_session_path , method: :delete) %> <% end %>
-        </p>
-      </div>
-
-    </div>
-
-    <%= render 'partials/header' %>
-    <br><br><br>
+    <h4>Centro de Bachillerato Tecnologico Agropecuario No.152 "Lauro L. Mendez"</h4>
+    <h2 class="text-center">Competencias Genéricas para la Educacion Media Superior</h2>
+    <br>
+    <br>
 
     <% if current_user.admin_role %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= image_tag "photo.png"%>
+          <h5>Bienvenido</h5>
+          <p>
+            <%= current_user.email %>
+          </p>
+          <h5>Semestre Actual</h5>
+          <p>
+            Lorem ipsum dolor sit amet,
+          </p>
 
-      <%= link_to "Administradores", users_path %>
-      <%= link_to "Profesores", teachers_path %>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li><%= link_to "Administradores", users_path %></li>
+            <li><%= link_to "Profesores", teachers_path %></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="col-md-12">
+            <%= image_tag "logo.png", class:'Wlogo' %>
+          </div>
+          <div class="col-md-12 text-center">
+            <br>
+            <br>
+            <br>
+            Calendario
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+
+      </div>
 
     <% else %>
 
@@ -64,21 +90,20 @@
 
 
     <br><br>
-    <div class="row">
-
-      <div class="col-md-3">
-        <%= image_tag "logo-sep", class:'Wsep'%>
+    <div class="row semifooter">
+      <div class="col-md-3 fh text-center">
+        <%= image_tag "logo-sep", class:'img-fh'%>
       </div>
-      <div class="col-md-3">
-          <%= image_tag 'logo-dgeta', class: 'Wdgeta' %>
-      </div>
-
-      <div class="col-md-3">
-        <%= image_tag "logo-sems", class:'Wsems' %>
+      <div class="col-md-3 fh text-center">
+          <%= image_tag 'logo-dgeta', class: 'img-fh' %>
       </div>
 
-      <div class="col-md-3">
-        <%= image_tag 'logo-snb', class: 'Wsnb' %>
+      <div class="col-md-3 fh text-center">
+        <%= image_tag "logo-sems", class:'img-fh' %>
+      </div>
+
+      <div class="col-md-3 fh text-center">
+        <%= image_tag 'logo-snb', class: 'img-fh' %>
       </div>
 
 
