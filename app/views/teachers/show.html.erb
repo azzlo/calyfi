@@ -1,33 +1,48 @@
 <%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="">
 
-<p id="notice"><%= notice %></p>
+      </div>
+      <div class="col-md-3">
+        
+      </div>
+      <div class="col-md-6">
+        <p class="colorTextoDos">
+          <strong class="colorTextoCuatro">Nombre:</strong>
+          <%= @teacher.name %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @teacher.name %>
-</p>
+        <p class="colorTextoDos">
+          <strong class="colorTextoCuatro">Apellido Paterno:</strong>
+          <%= @teacher.last_name %>
+        </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @teacher.last_name %>
-</p>
+        <p class="colorTextoDos">
+          <strong class="colorTextoCuatro">Apellido Materno:</strong>
+          <%= @teacher.mothers_last_name %>
+        </p>
 
-<p>
-  <strong>Mothers last name:</strong>
-  <%= @teacher.mothers_last_name %>
-</p>
+        <p class="colorTextoDos">
+          <strong class="colorTextoCuatro">Perfil:</strong>
+          <%= @teacher.perfil %>
+        </p>
 
-<p>
-  <strong>Perfil:</strong>
-  <%= @teacher.perfil %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @teacher.user %>
-</p>
 
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+
+    </div>
+
+
+  </div>
+  <%= link_to 'Edit', edit_teacher_path(@teacher), class:"btn colorBackgroundTres colorTextoCinco" %>
+  <%= link_to 'Back', teachers_path, class:"btn colorBackgroundTres colorTextoCinco"  %>
+
+  </div>
+
+</div>
+
 
 <%= render 'partials/footer' %>

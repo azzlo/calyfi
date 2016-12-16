@@ -25,9 +25,9 @@
               <td><%= [teacher.name, teacher.last_name, teacher.mothers_last_name].join(" ")%></td>
               <td><%= teacher.perfil %></td>
               <td><%= teacher.user.email %></td>
-              <td><%= link_to 'Show', teacher %></td>
-              <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-              <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Mostrar', teacher %></td>
+              <td><%= link_to 'Editar', edit_teacher_path(teacher) %></td>
+              <td><%= link_to 'Eliminar', teacher, method: :delete, data: { confirm: 'Estas seguro de eliminar?' } %></td>
             </tr>
             <% end %>
           </tbody>

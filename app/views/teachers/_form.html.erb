@@ -13,20 +13,20 @@
 
   <%= f.fields_for :users do |u| %>
     <div class="field espaciado">
-      <%= u.label :email %>
-      <%= u.email_field :email, autofocus: true %>
+      <%= u.label :email, class:"colorTextoCuatro" %>
+      <%= u.email_field :email, autofocus: true, class:"colorBorderUno" %>
     </div>
     <div class="field espaciado">
-      <%= u.label :password %>
+      <%= u.label :password, class:"colorTextoCuatro" %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %>
-      <%= u.password_field :password, autocomplete: "off" %>
+      <%= u.password_field :password, autocomplete: "off", class:"colorBorderUno" %>
     </div>
 
     <div class="field espaciado">
-      <%= u.label :password_confirmation %>
-      <%= u.password_field :password_confirmation, autocomplete: "off" %>
+      <%= u.label :password_confirmation, class:"colorTextoCuatro" %>
+      <%= u.password_field :password_confirmation, autocomplete: "off", class:"colorBorderUno" %>
     </div>
   <% end %>
 
@@ -48,11 +48,6 @@
   <div class="field espaciado">
     <%= f.label :perfil, class:"colorTextoCuatro" %>
     <%= f.text_area :perfil, class:"colorBorderUno" %>
-  </div>
-
-  <div class="field espaciado">
-    <%= f.label :usuario, class:"colorTextoCuatro" %>
-    <%= f.text_field :user_id, class:"colorBorderUno" %>
   </div>
 
   <div class="actions espaciado">
