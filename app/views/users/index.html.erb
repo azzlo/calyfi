@@ -1,28 +1,48 @@
 <%= render 'partials/header' %>
-<h1>Administradores del sistema</h1>
-<% if flash[:notice] %>
-<p class="notice"><%= notice %></p>
-<% end %>
-<% if flash[:alert] %>
-<p class="alert"><%= alert %></p>
-<% end %>
-<p><%= link_to 'Nuevo Administrador', new_user_url, class: "btn btn-primary" %></p>
-<table class="table">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Email</th>
-      <th colspan="2">Acciones</th>
-    </tr>
-  </thead>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Administradores del sistema</h1>
+      </div>
+      <br>
+      <div class="col-md-12 derecha-texto">
+        <p><%= link_to 'Nuevo Administrador', new_user_url, class:"btn colorBackgroundTres colorTextoCinco" %></p>
+      </div>
+      <br>
+      <div class="col-md-12">
+        <% if flash[:notice] %>
+        <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if flash[:alert] %>
+        <p class="alert"><%= alert %></p>
+        <% end %>
 
-  <tbody>
-    <% @administrators.each do |admin| %>
-    <tr>
-      <td><%= admin.email %></td>
-      <td><%= link_to 'Editar', edit_user_path(admin) %></td>
-      <td><%= link_to 'Eliminar', admin, method: :delete, data: {confirm: '¿Estas seguro?'}  %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+        <table class="table table-hover">
+          <thead class="colorBackgroundTres colorTextoCinco">
+            <tr>
+              <th>Email</th>
+              <th colspan="2">Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @administrators.each do |admin| %>
+            <tr>
+              <td><%= admin.email %></td>
+              <td><%= link_to 'Editar', edit_user_path(admin) %></td>
+              <td><%= link_to 'Eliminar', admin, method: :delete, data: {confirm: '¿Estas seguro?'}  %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
 <%= render 'partials/footer' %>

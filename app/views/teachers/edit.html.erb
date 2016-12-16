@@ -1,10 +1,24 @@
+
 <%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-3">
 
-<h1>Editing Teacher</h1>
+      </div>
+      <div class="col-md-6">
+        <h1 class="centrar-texto" >Editar Profesor</h1>
+        <br>
+        <%= render 'form', teacher: @teacher %>
+      </div>
 
-<%= render 'form', teacher: @teacher %>
+    </div>
 
-<%= link_to 'Show', @teacher %> |
-<%= link_to 'Back', teachers_path %>
+    <br>
+    <%= link_to 'Mostrar', @teacher, class:"btn colorBackgroundTres colorTextoCinco" %>
+    <%= link_to 'Regresar', teachers_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
+
 
 <%= render 'partials/footer' %>
