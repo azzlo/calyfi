@@ -62,18 +62,21 @@
   </div>
 
   <div class="field">
-    <%= f.label :sex %>
-    <%= f.text_field :sex %>
+    <%= f.radio_button(:sex, "Masculino") %>
+    <%= f.label(:sex_masculino, "Masculino") %>
+    <%= f.radio_button(:sex, "Femenino") %>
+    <%= f.label(:sex_femenino, "Femenino") %>
   </div>
 
   <div class="field">
     <%= f.label :degree_id %>
-    <%= f.text_field :degree_id %>
+    <%= f.select :degree_id, options_for_select(Degree.all.map{ |c| [c.name, c.id] }) %>
   </div>
 
   <div class="field">
     <%= f.label :specialty_id %>
-    <%= f.text_field :specialty_id %>
+    <%= f.select :specialty_id, options_for_select(Specialty.all.map{ |c| [c.name, c.id] }) %>
+    <%#= f.text_field :specialty_id %>
   </div>
 
   <div class="actions">

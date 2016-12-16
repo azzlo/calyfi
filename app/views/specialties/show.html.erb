@@ -10,5 +10,23 @@
   <%= @specialty.description %>
 </p>
 
+<h2>Alumnos asignados</h2>
+<p>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre del alumno</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @specialty.students.each do |student|  %>
+        <tr>
+          <td><%= [student.name, student.last_name, student.mothers_last_name].join(' ') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
 <%= link_to 'Edit', edit_specialty_path(@specialty) %> |
 <%= link_to 'Back', specialties_path %>

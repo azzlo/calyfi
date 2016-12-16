@@ -5,5 +5,22 @@
   <%= @degree.name %>
 </p>
 
+<h2>Alumnos asignados</h2>
+<p>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre del alumno</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @degree.students.each do |student|  %>
+        <tr>
+          <td><%= [student.name, student.last_name, student.mothers_last_name].join(' ') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
 <%= link_to 'Edit', edit_degree_path(@degree) %> |
 <%= link_to 'Back', degrees_path %>

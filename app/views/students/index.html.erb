@@ -36,8 +36,8 @@
         <td><%= student.postal_code %></td>
         <td><%= student.birthdate %></td>
         <td><%= student.sex %></td>
-        <td><%= student.degree %></td>
-        <td><%= student.specialty %></td>
+        <td><%= student.degree.name %></td>
+        <td><%= student.specialty.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
