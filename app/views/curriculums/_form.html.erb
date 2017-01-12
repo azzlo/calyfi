@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :specialty_id %>
-    <%= f.text_field :specialty_id %>
+    <%= f.collection_select :specialty_id, Specialty.all, :id, :name, {} %>
   </div>
 
   <div class="field">
-    <%= f.label :study_cycle_id %>
-    <%= f.text_field :study_cycle_id %>
+    <%= f.label :Apartir_del_ciclo_escolar %>
+    <%= f.collection_select :study_cycle_id, StudyCycle.all, :id, :aux_name, {} %>
   </div>
 
   <div class="actions">

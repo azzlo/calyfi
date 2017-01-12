@@ -1,10 +1,11 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :set_curriculum, only: [:index, :new, :show, :edit, :update, :destroy]
 
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = @curriculum.subjects
   end
 
   # GET /subjects/1
@@ -14,7 +15,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = Subject.new
+    @subject = @curriculum.subjects.build
   end
 
   # GET /subjects/1/edit
@@ -28,7 +29,7 @@ class SubjectsController < ApplicationController
 
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+        format.html { redirect_to curriculum_subjects_path(@subject.curriculum), notice: 'Subject was successfully created.' }
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class SubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
+        format.html { redirect_to curriculum_subjects_path(@subject.curriculum), notice: 'Subject was successfully updated.' }
         format.json { render :show, status: :ok, location: @subject }
       else
         format.html { render :edit }
@@ -67,6 +68,9 @@ class SubjectsController < ApplicationController
       @subject = Subject.find(params[:id])
     end
 
+    def set_curriculum
+      @curriculum = Curriculum.find(params[:curriculum_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
       params.require(:subject).permit(:name, :code, :semester, :curriculum_id, :teacher_id, :dependency_subject_id)

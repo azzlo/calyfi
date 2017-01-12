@@ -15,5 +15,9 @@
   <%= @curriculum.study_cycle %>
 </p>
 
+<h3>
+<%= link_to 'Reticula de Materias', curriculum_subjects_path(@curriculum) %>
+</h3>
+
 <%= link_to 'Edit', edit_curriculum_path(@curriculum) %> |
 <%= link_to 'Back', curriculums_path %>

@@ -1,4 +1,4 @@
-<%= form_for(subject) do |f| %>
+<%= form_for [@curriculum, @subject] do |f| %>
   <% if subject.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
@@ -28,17 +28,12 @@
 
   <div class="field">
     <%= f.label :curriculum_id %>
-    <%= f.text_field :curriculum_id %>
+    <%= f.collection_select :curriculum_id, Curriculum.all, :id, :name, {} %>
   </div>
 
   <div class="field">
     <%= f.label :teacher_id %>
-    <%= f.text_field :teacher_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dependency_subject_id %>
-    <%= f.number_field :dependency_subject_id %>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {} %>
   </div>
 
   <div class="actions">

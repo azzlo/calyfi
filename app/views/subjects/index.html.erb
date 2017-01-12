@@ -24,9 +24,8 @@
         <td><%= subject.curriculum %></td>
         <td><%= subject.teacher %></td>
         <td><%= subject.dependency_subject_id %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_curriculum_subject_path(@curriculum, subject) %></td>
+        <td><%= link_to 'Destroy', curriculum_subject_path(@curriculum, subject), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Subject', new_subject_path %>
+<%= link_to 'New Subject', new_curriculum_subject_path %>
