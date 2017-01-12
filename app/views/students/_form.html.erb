@@ -11,75 +11,75 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :enrollment %>
-    <%= f.text_field :enrollment %>
+  <div class="field espaciado">
+    <%= f.label :Matricula, class:"colorTextoCuatro" %>
+    <%= f.text_field :enrollment, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="field espaciado">
+    <%= f.label :Nombre, class:"colorTextoCuatro" %>
+    <%= f.text_field :name, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+  <div class="field espaciado">
+    <%= f.label :Apellido_paterno, class:"colorTextoCuatro" %>
+    <%= f.text_field :last_name, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :mothers_last_name %>
-    <%= f.text_field :mothers_last_name %>
+  <div class="field espaciado">
+    <%= f.label :Apellido_materno, class:"colorTextoCuatro" %>
+    <%= f.text_field :mothers_last_name, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+  <div class="field espaciado">
+    <%= f.label :Calle, class:"colorTextoCuatro" %>
+    <%= f.text_field :address, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :suburb %>
-    <%= f.text_field :suburb %>
+  <div class="field espaciado">
+    <%= f.label :Municipio, class:"colorTextoCuatro" %>
+    <%= f.text_field :suburb, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+  <div class="field espaciado">
+    <%= f.label :Ciudad, class:"colorTextoCuatro" %>
+    <%= f.text_field :city, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+  <div class="field espaciado">
+    <%= f.label :Estado, class:"colorTextoCuatro" %>
+    <%= f.text_field :state, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :postal_code %>
-    <%= f.text_field :postal_code %>
+  <div class="field espaciado">
+    <%= f.label :Codigo_postal, class:"colorTextoCuatro" %>
+    <%= f.text_field :postal_code, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
-    <%= f.label :birthdate %>
-    <%= f.date_select :birthdate %>
+  <div class="field espaciado">
+    <%= f.label :Fecha_de_nacimiento, class:"colorTextoCuatro" %>
+    <%= f.date_select :birthdate, class:"colorBorderUno" %>
   </div>
 
-  <div class="field">
+  <div class="field espaciado">
     <%= f.radio_button(:sex, "Masculino") %>
     <%= f.label(:sex_masculino, "Masculino") %>
     <%= f.radio_button(:sex, "Femenino") %>
     <%= f.label(:sex_femenino, "Femenino") %>
   </div>
 
-  <div class="field">
-    <%= f.label :group_id %>
-    <%= f.select :group_id, options_for_select(Group.all.map{ |c| [c.name, c.id] }) %>
+  <div class="field espaciado">
+    <%= f.label :Grupo, class:"colorTextoCuatro" %>
+    <%= f.select :group_id, options_for_select(Group.all.map{ |c| [c.name, c.id] }), class:" colorBackgroundTres colorTextoCinco" %>
   </div>
 
-  <div class="field">
-    <%= f.label :specialty_id %>
-    <%= f.select :specialty_id, options_for_select(Specialty.all.map{ |c| [c.name, c.id] }) %>
+  <div class="field espaciado">
+    <%= f.label :Espacialidad_o_carrera, class:"colorTextoCuatro" %>
+    <%= f.select :specialty_id, options_for_select(Specialty.all.map{ |c| [c.name, c.id] }), class:" colorBackgroundTres colorTextoCinco" %>
     <%#= f.text_field :specialty_id %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions espaciado">
+    <%= f.submit 'Crear Alumno', class:"btn colorBackgroundTres colorTextoCinco" %>
   </div>
 <% end %>
