@@ -10,13 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="field espaciado">
+      <%= f.label :Nombre, class:"colorTextoCuatro"%>
+      <%= f.text_field :name, class:"colorBorderUno" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="actions">
+      <%= f.submit 'Crear Grupo', class:"btn colorBackgroundTres colorTextoCinco" %>
+    </div>
   </div>
+</div>
+
+
 <% end %>
