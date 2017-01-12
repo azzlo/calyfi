@@ -1,26 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+      <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Detalles del grupo</h1>
+      </div>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
 
-<h2>Alumnos asignados</h2>
-<p>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre del alumno</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @group.students.each do |student|  %>
-        <tr>
-          <td><%= [student.name, student.last_name, student.mothers_last_name].join(' ') %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</p>
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+    <p>
+      <strong>Name:</strong>
+      <%= @group.name %>
+    </p>
+
+
+    <%= link_to 'Editar', edit_group_path(@group), class:"btn colorBackgroundTres colorTextoCinco" %>
+    <%= link_to 'Regresar', groups_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
+
+
+<%= render 'partials/footer' %>

@@ -1,5 +1,25 @@
-<h1>New Group</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Nuevo Grupo</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+          <%= render 'form', group: @group %>
+      </div>
+      <div class="col-md-3">
+      </div>
 
-<%= render 'form', group: @group %>
+    </div>
+    <br>
+    <%= link_to 'Regresar', groups_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
 
-<%= link_to 'Back', groups_path %>
+<%= render 'partials/footer' %>

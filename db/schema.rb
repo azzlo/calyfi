@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170112204624) do
     t.index ["study_cycle_id"], name: "index_curriculums_on_study_cycle_id"
   end
 
+
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

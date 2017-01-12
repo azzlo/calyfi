@@ -1,3 +1,4 @@
+<%= render 'partials/header' %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -55,10 +56,7 @@
   <%= @student.sex %>
 </p>
 
-<p>
-  <strong>Degree:</strong>
-  <%= @student.degree %>
-</p>
+
 
 <p>
   <strong>Specialty:</strong>
@@ -67,3 +65,4 @@
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+<%= render 'partials/footer' %>

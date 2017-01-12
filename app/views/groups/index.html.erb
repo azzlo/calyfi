@@ -1,27 +1,86 @@
-<p id="notice"><%= notice %></p>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Grupos</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">Buscar Grupo</span>
+          <input type="text" class="form-control" placeholder="Nombre del grupo">
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active colorTextoCuatro" data-toggle="tab" href="#home" role="tab">Todos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link colorTextoCuatro" data-toggle="tab" href="#profile" role="tab">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link colorTextoCuatro" data-toggle="tab" href="#messages" role="tab">Charreria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link colorTextoCuatro" data-toggle="tab" href="#settings" role="tab">Informatica</a>
+          </li>
+        </ul>
 
-<h1>Groups</h1>
+        <div class="tab-content">
+          <div class="tab-pane active" id="home" role="tabpanel">
+            <br>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+              <tbody>
+                <% @groups.each do |group| %>
+                  <tr>
+                    <td><%= group.name %></td>
+                    <td ><%= link_to 'Mostrar', group %></td>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                    <td><%= link_to 'Editar', edit_group_path(group) %></td>
+                    <td><%= link_to 'Eliminar', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="profile" role="tabpanel"><br>...2</div>
+          <div class="tab-pane" id="messages" role="tabpanel"><br>...3</div>
+          <div class="tab-pane" id="settings" role="tabpanel"><br>...4</div>
+        </div>
 
-<br>
+      </div>
+    </div>
+    <br>
 
-<%= link_to 'New Group', new_group_path %>
+
+
+
+    <br>
+
+    <%= link_to 'Nuevo Grupo', new_group_path, class:"btn colorBackgroundTres colorTextoCinco"%>
+    <br>
+  </div>
+
+</div>
+
+
+
+<%= render 'partials/footer' %>
