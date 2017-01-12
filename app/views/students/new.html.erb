@@ -1,5 +1,22 @@
-<h1>New Student</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Nuevo alumno</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
 
-<%= render 'form', student: @student %>
+      </div>
+      <div class="col-md-6">
+        <%= render 'form', student: @student %>
+      </div>
+    </div>
+    <br>
+    <%= link_to 'Regresar', students_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
 
-<%= link_to 'Back', students_path %>
+<%= render 'partials/footer' %>
