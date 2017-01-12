@@ -1,0 +1,27 @@
+<%= form_for(study_cycle) do |f| %>
+  <% if study_cycle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(study_cycle.errors.count, "error") %> prohibited this study_cycle from being saved:</h2>
+
+      <ul>
+      <% study_cycle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_at %>
+    <%= f.date_select :start_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_at %>
+    <%= f.date_select :end_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

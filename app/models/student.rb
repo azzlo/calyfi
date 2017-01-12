@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-  belongs_to :degree
+  belongs_to :group
   belongs_to :specialty
 
   validates :enrollment, presence: true

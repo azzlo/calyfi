@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :study_cycles
   resources :specialties
-  resources :degrees
+  resources :groups
   resources :students
   resources :teachers
   devise_for :users

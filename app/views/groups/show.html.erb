@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @degree.name %>
+  <%= @group.name %>
 </p>
 
 <h2>Alumnos asignados</h2>
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @degree.students.each do |student|  %>
+      <% @group.students.each do |student|  %>
         <tr>
           <td><%= [student.name, student.last_name, student.mothers_last_name].join(' ') %></td>
         </tr>
@@ -22,5 +22,5 @@
     </tbody>
   </table>
 </p>
-<%= link_to 'Edit', edit_degree_path(@degree) %> |
-<%= link_to 'Back', degrees_path %>
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Study Cycles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start at</th>
+      <th>End at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @study_cycles.each do |study_cycle| %>
+      <tr>
+        <td><%= study_cycle.start_at %></td>
+        <td><%= study_cycle.end_at %></td>
+        <td><%= link_to 'Show', study_cycle %></td>
+        <td><%= link_to 'Edit', edit_study_cycle_path(study_cycle) %></td>
+        <td><%= link_to 'Destroy', study_cycle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Study Cycle', new_study_cycle_path %>
