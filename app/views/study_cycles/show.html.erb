@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @study_cycle.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @study_cycle.end_at %>
+</p>
+
+<%= link_to 'Edit', edit_study_cycle_path(@study_cycle) %> |
+<%= link_to 'Back', study_cycles_path %>

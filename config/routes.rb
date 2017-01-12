@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :study_cycles
   resources :specialties
   resources :groups
   resources :students
