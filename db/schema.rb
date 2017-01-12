@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112161920) do
+ActiveRecord::Schema.define(version: 20170112204624) do
+
+  create_table "curriculums", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "specialty_id"
+    t.integer  "study_cycle_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["specialty_id"], name: "index_curriculums_on_specialty_id"
+    t.index ["study_cycle_id"], name: "index_curriculums_on_study_cycle_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -43,6 +53,26 @@ ActiveRecord::Schema.define(version: 20170112161920) do
     t.datetime "updated_at",        null: false
     t.index ["group_id"], name: "index_students_on_group_id"
     t.index ["specialty_id"], name: "index_students_on_specialty_id"
+  end
+
+  create_table "study_cycles", force: :cascade do |t|
+    t.date     "start_at"
+    t.date     "end_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.integer  "semester"
+    t.integer  "curriculum_id"
+    t.integer  "teacher_id"
+    t.integer  "dependency_subject_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["curriculum_id"], name: "index_subjects_on_curriculum_id"
+    t.index ["teacher_id"], name: "index_subjects_on_teacher_id"
   end
 
   create_table "teachers", force: :cascade do |t|
