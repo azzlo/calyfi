@@ -1,5 +1,24 @@
-<h1>Nueva Reticula de Estudios</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Nueva Reticula de Estudios</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'form', curriculum: @curriculum %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+            <%= link_to 'Regresar', curriculums_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', curriculum: @curriculum %>
-
-<%= link_to 'Back', curriculums_path %>
+<%= render 'partials/footer' %>

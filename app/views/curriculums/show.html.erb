@@ -1,23 +1,33 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @curriculum.name %>
-</p>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-md-4">
+          <h3><strong>Nombre Reticula:</strong></h3>
+        <h5><%= @curriculum.name %></h5>
+      </div>
+      <div class="col-md-4">
+        <h3><strong>Especialidad:</strong></h3>
+        <h5>  <%= @curriculum.specialty.name %></h5>
+      </div>
+      <div class="col-md-4">
+        <h3><strong>Ciclo Escolar:</strong></h3>
+        <h5><%= @curriculum.study_cycle.aux_name %></h5>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12 derecha-texto">
+        <%= link_to 'Materias de la reticula', curriculum_subjects_path(@curriculum), class:"btn colorBackgroundTres colorTextoCinco" %>
+      </div>
+    </div>
+    <%= link_to 'Regresar', curriculums_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
 
-<p>
-  <strong>Specialty:</strong>
-  <%= @curriculum.specialty %>
-</p>
 
-<p>
-  <strong>Study cycle:</strong>
-  <%= @curriculum.study_cycle %>
-</p>
 
-<h3>
-<%= link_to 'Reticula de Materias', curriculum_subjects_path(@curriculum) %>
-</h3>
 
-<%= link_to 'Edit', edit_curriculum_path(@curriculum) %> |
-<%= link_to 'Back', curriculums_path %>
+<%= render 'partials/footer' %>

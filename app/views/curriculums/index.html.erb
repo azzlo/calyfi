@@ -1,31 +1,53 @@
-<p id="notice"><%= notice %></p>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <p id="notice"><%= notice %></p>
 
-<h1>Curriculums</h1>
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Reticulas de estudios</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 derecha-texto">
+          <%= link_to 'Nueva reticula', new_curriculum_path, class:"btn colorBackgroundTres colorTextoCinco"  %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-1">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Specialty</th>
-      <th>Study cycle</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      </div>
+      <div class="col-md-10">
+        <table class="table table-hover">
+          <thead class="colorBackgroundTres colorTextoCinco">
+            <tr>
+              <th>Nombre</th>
+              <th>Especialidad</th>
+              <th>Ciclo escolar</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @curriculums.each do |curriculum| %>
-      <tr>
-        <td><%= curriculum.name %></td>
-        <td><%= curriculum.specialty %></td>
-        <td><%= curriculum.study_cycle %></td>
-        <td><%= link_to 'Show', curriculum %></td>
-        <td><%= link_to 'Edit', edit_curriculum_path(curriculum) %></td>
-        <td><%= link_to 'Destroy', curriculum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <tbody>
+            <% @curriculums.each do |curriculum| %>
+              <tr>
+                <td><%= curriculum.name %></td>
+                <td><%= curriculum.specialty %></td>
+                <td><%= curriculum.study_cycle %></td>
+                <td><%= link_to 'Mostrar', curriculum %></td>
+                <td><%= link_to 'Editar', edit_curriculum_path(curriculum) %></td>
+                <td><%= link_to 'Eliminar', curriculum, method: :delete, data: { confirm: 'Esta seguro que desea eliminar la reticula, esto podria afectar a los grupos y aumnos?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-<br>
+    <br>
 
-<%= link_to 'New Curriculum', new_curriculum_path %>
+  </div>
+</div>
+
+<%= render 'partials/footer' %>
