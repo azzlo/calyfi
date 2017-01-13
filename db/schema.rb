@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112204624) do
+ActiveRecord::Schema.define(version: 20170113161237) do
 
   create_table "curriculums", force: :cascade do |t|
     t.string   "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20170112204624) do
     t.index ["specialty_id"], name: "index_curriculums_on_specialty_id"
     t.index ["study_cycle_id"], name: "index_curriculums_on_study_cycle_id"
   end
-
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -49,11 +48,13 @@ ActiveRecord::Schema.define(version: 20170112204624) do
     t.date     "birthdate"
     t.string   "sex"
     t.integer  "group_id"
-    t.integer  "specialty_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "curriculum_id"
+    t.integer  "study_cycle_id"
+    t.index ["curriculum_id"], name: "index_students_on_curriculum_id"
     t.index ["group_id"], name: "index_students_on_group_id"
-    t.index ["specialty_id"], name: "index_students_on_specialty_id"
+    t.index ["study_cycle_id"], name: "index_students_on_study_cycle_id"
   end
 
   create_table "study_cycles", force: :cascade do |t|

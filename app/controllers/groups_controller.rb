@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+    @specialties = Specialty.all
   end
 
   # GET /groups/1
