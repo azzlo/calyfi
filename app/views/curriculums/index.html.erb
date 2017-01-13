@@ -33,7 +33,7 @@
             <% @curriculums.each do |curriculum| %>
               <tr>
                 <td><%= curriculum.name %></td>
-                <td><%= curriculum.specialty %></td>
+                <td><%= curriculum.specialty.name %></td>
                 <td><%= curriculum.study_cycle %></td>
                 <td><%= link_to 'Mostrar', curriculum %></td>
                 <td><%= link_to 'Editar', edit_curriculum_path(curriculum) %></td>
@@ -46,6 +46,44 @@
     </div>
 
     <br>
+    <div class="row">
+      <div class="col-md-3 centrar-texto">
+        <h3>Año de publicacion</h3>
+      </div>
+      <div class="col-md-9 centrar-texto">
+        <h3>Especialidad de la reticula</h3>
+      </div>
+    </div>
+    <div class="row colorBorderUno">
+      <div class="col-md-3 centrar-texto ">
+        <h1>2016</h1>
+      </div>
+      <div class="col-md-3 btn colorBackgroundCuatro ">
+        <h3>clave_matricula</h3>
+      </div>
+      <div class="col-md-3 btn colorBackgroundCinco ">
+        <h3>clave_matricula</h3>
+      </div>
+      <div class="col-md-3 btn colorBackgroundUno ">
+        <h3>clave_matricula</h3>
+      </div>
+    </div>
+  
+    <div class="row colorBorderUno">
+      <div class="col-md-3 centrar-texto ">
+        <h1>2016</h1>
+      </div>
+      <div class="col-md-3 btn colorBackgroundCuatro ">
+        <h3>clave_matricula</h3>
+      </div>
+      <div class="col-md-3 btn colorBackgroundCinco ">
+        <h3>clave_matricula</h3>
+      </div>
+      <div class="col-md-3 btn colorBackgroundUno ">
+        <h3>clave_matricula</h3>
+      </div>
+    </div>
+
 
   </div>
 </div>
