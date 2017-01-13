@@ -1,13 +1,20 @@
 <%= render 'partials/header' %>
 <div class="contenedor-principal">
   <div class="margenes">
-    <br><br>
     <div class="row">
       <div class="col-md-12">
         <h1 class="centrar-texto">Profesores</h1>
       </div>
     </div>
+    
+    <div class="row">
+      <div class="col-md-12 derecha-texto">
+        <%= link_to 'Nuevo Profesor', new_teacher_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+
+      </div>
+    </div>
     <br>
+
     <div class="row">
       <div class="col-md-12">
         <table class="table table-hover">
@@ -36,12 +43,7 @@
 
       </div>
     <br>
-    <div class="row">
-      <div class="col-md-12 centrar-texto">
-        <%= link_to 'Nuevo Profesor', new_teacher_path, class:"btn colorBackgroundTres colorTextoCinco" %>
 
-      </div>
-    </div>
   </div>
 </div>
 <%= render 'partials/footer' %>

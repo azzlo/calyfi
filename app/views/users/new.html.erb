@@ -21,16 +21,16 @@
         <br>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="field espaciado">
-            <%= f.label "Correo Electronico", class:"colorTextoCuatro" %>
+            <%= f.label "Correo Electronico", class:"colorTextoCuatro" %><br>
             <%= f.text_field :email, class:"colorBorderUno"%>
           </div>
           <div class="field espaciado">
-            <%= f.label "Contraseña", class:"colorTextoCuatro" %>
+            <%= f.label "Contraseña", class:"colorTextoCuatro" %><br>
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %>
@@ -38,11 +38,11 @@
           </div>
 
           <div class="field espaciado">
-            <%= f.label "Confirma la Contraseña", class:"colorTextoCuatro" %>
+            <%= f.label "Confirma la Contraseña", class:"colorTextoCuatro" %><br>
             <%= f.password_field :password_confirmation, autocomplete: "off", class:"colorBorderUno" %>
           </div>
           <br>
-          <div class="actions centrar-texto">
+          <div class="actions ">
             <%= f.submit 'Crear Usuario', class:"btn colorBackgroundTres colorTextoCinco" %>
           </div>
 

@@ -13,11 +13,11 @@
 
   <%= f.fields_for :users do |u| %>
     <div class="field espaciado">
-      <%= u.label :email, class:"colorTextoCuatro" %>
+      <%= u.label :email, class:"colorTextoCuatro" %><br>
       <%= u.email_field :email, autofocus: true, class:"colorBorderUno" %>
     </div>
     <div class="field espaciado">
-      <%= u.label :password, class:"colorTextoCuatro" %>
+      <%= u.label :password, class:"colorTextoCuatro" %><br>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %>
@@ -25,28 +25,28 @@
     </div>
 
     <div class="field espaciado">
-      <%= u.label :password_confirmation, class:"colorTextoCuatro" %>
+      <%= u.label :password_confirmation, class:"colorTextoCuatro" %><br>
       <%= u.password_field :password_confirmation, autocomplete: "off", class:"colorBorderUno" %>
     </div>
   <% end %>
 
   <div class="field espaciado">
-    <%= f.label :nombre, class:"colorTextoCuatro"%>
+    <%= f.label :nombre, class:"colorTextoCuatro"%><br>
     <%= f.text_field :name, class:"colorBorderUno"%>
   </div>
 
   <div class="field espaciado">
-    <%= f.label :Apellido_paterno, class:"colorTextoCuatro" %>
+    <%= f.label :Apellido_paterno, class:"colorTextoCuatro" %><br>
     <%= f.text_field :last_name, class:"colorBorderUno" %>
   </div>
 
   <div class="field espaciado">
-    <%= f.label :Apellido_materno, class:"colorTextoCuatro" %>
+    <%= f.label :Apellido_materno, class:"colorTextoCuatro" %><br>
     <%= f.text_field :mothers_last_name, class:"colorBorderUno" %>
   </div>
 
   <div class="field espaciado">
-    <%= f.label :perfil, class:"colorTextoCuatro" %>
+    <%= f.label :perfil, class:"colorTextoCuatro" %><br>
     <%= f.text_area :perfil, class:"colorBorderUno" %>
   </div>
 
