@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113161237) do
+ActiveRecord::Schema.define(version: 20170113165045) do
 
   create_table "curriculums", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20170113161237) do
     t.datetime "updated_at",        null: false
     t.integer  "curriculum_id"
     t.integer  "study_cycle_id"
+    t.integer  "semester"
+    t.boolean  "is_graduated"
     t.index ["curriculum_id"], name: "index_students_on_curriculum_id"
     t.index ["group_id"], name: "index_students_on_group_id"
     t.index ["study_cycle_id"], name: "index_students_on_study_cycle_id"
