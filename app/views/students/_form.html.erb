@@ -37,7 +37,10 @@
     <%= f.radio_button(:sex, "Femenino") %>
     <%= f.label(:sex_femenino, "Femenino") %>
   </div>
-
+  <div class="field espaciado">
+    <%= f.label :Semestre, class:"colorTextoCuatro" %>
+    <%= f.select :semester, options_for_select((1..6).map{ |c| [c, c] }), {}, class: "form-control" %>
+  </div>
   <div class="field espaciado">
     <%= f.label :Grupo, class:"colorTextoCuatro" %>
     <%= f.select :group_id, options_for_select(Group.all.map{ |c| [c.name, c.id] }), {}, class: "form-control" %>
