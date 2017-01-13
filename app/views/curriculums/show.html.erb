@@ -20,8 +20,49 @@
     <br>
     <div class="row">
       <div class="col-md-12 derecha-texto">
-        <%= link_to 'Materias de la reticula', curriculum_subjects_path(@curriculum), class:"btn colorBackgroundTres colorTextoCinco" %>
+        <%= link_to 'Nueva materia', new_curriculum_subject_path(@curriculum), class:"btn colorBackgroundTres colorTextoCinco" %>
       </div>
+    </div>
+
+    <div class="row">
+      <% 6.times do |num| %>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Semestre <%= num+1 %></h3>
+          </div>
+          <br>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-10">
+            <table class="table table-hover">
+              <thead class="colorBackgroundTres colorTextoCinco">
+                <tr>
+                  <th>Nombre</th>
+                  <th>Clave</th>
+                  <th>Reticula academica</th>
+                  <th>Profesor</th>
+                  <th>Dependencia</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @curriculum.subjects.where(:semester => num+1).each do |subject| %>
+                <tr>
+                  <td><%= subject.name %></td>
+                  <td><%= subject.code %></td>
+                  <td><%= subject.curriculum.name %></td>
+                  <td><%= subject.teacher.name %></td>
+                  <td><%= subject.dependency_subject.name if subject.dependency_subject %></td>
+                  <td><%= link_to 'Edit', edit_curriculum_subject_path(@curriculum, subject) %></td>
+                  <td><%= link_to 'Destroy', curriculum_subject_path(@curriculum, subject), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <% end %>
     </div>
     <%= link_to 'Regresar', curriculums_path, class:"btn colorBackgroundTres colorTextoCinco" %>
   </div>

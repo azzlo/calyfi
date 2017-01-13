@@ -31,13 +31,13 @@
       </div>
 
       <div class="field espaciado">
-        <%= f.label :Reticula_a_la_que_pertenece, class:"colorTextoCuatro"  %><br>
-        <%= f.collection_select :curriculum_id, Curriculum.all, :id, :name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
+        <%= f.label :Profesor_que_la_imparte, class:"colorTextoCuatro"  %><br>
+        <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
       </div>
 
       <div class="field espaciado">
-        <%= f.label :Profesor_que_la_imparte, class:"colorTextoCuatro"  %><br>
-        <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
+        <%= f.label :depende_de, class:"colorTextoCuatro"  %><br>
+        <%= f.collection_select :dependency_subject_id, Subject.all, :id, :name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
       </div>
       <br>
       <div class="actions espaciado">

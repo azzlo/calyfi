@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
-  before_action :set_curriculum, only: [:index, :new, :show, :edit, :update, :destroy]
+  before_action :set_curriculum, only: [:index, :new, :show, :create, :edit, :update, :destroy]
 
   # GET /subjects
   # GET /subjects.json
@@ -31,11 +31,11 @@ class SubjectsController < ApplicationController
   # POST /subjects
   # POST /subjects.json
   def create
-    @subject = Subject.new(subject_params)
-
+    @subject = @curriculum.subjects.build(subject_params)
+  
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to curriculum_subjects_path(@subject.curriculum), notice: 'Subject was successfully created.' }
+        format.html { redirect_to curriculum_path(@subject.curriculum), notice: 'Subject was successfully created.' }
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class SubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to curriculum_subjects_path(@subject.curriculum), notice: 'Subject was successfully updated.' }
+        format.html { redirect_to curriculum_path(@subject.curriculum), notice: 'Subject was successfully updated.' }
         format.json { render :show, status: :ok, location: @subject }
       else
         format.html { render :edit }
