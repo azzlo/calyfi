@@ -10,33 +10,40 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-md-4">
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    </div>
+    <div class="col-md-4">
+      <div class="field espaciado">
+        <%= f.label :Nombre_materia, class:"colorTextoCuatro"  %><br>
+        <%= f.text_field :name, class:"form-control colorBorderUno" %>
+      </div>
+
+      <div class="field espaciado">
+        <%= f.label :clave, class:"colorTextoCuatro"  %><br>
+        <%= f.text_field :code , class:"form-control colorBorderUno"%>
+      </div>
+
+      <div class="field espaciado">
+        <%= f.label :semestre, class:"colorTextoCuatro"  %><br>
+        <%= f.number_field :semester, class:"form-control colorBorderUno" %>
+      </div>
+
+      <div class="field espaciado">
+        <%= f.label :Reticula_a_la_que_pertenece, class:"colorTextoCuatro"  %><br>
+        <%= f.collection_select :curriculum_id, Curriculum.all, :id, :name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
+      </div>
+
+      <div class="field espaciado">
+        <%= f.label :Profesor_que_la_imparte, class:"colorTextoCuatro"  %><br>
+        <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
+      </div>
+      <br>
+      <div class="actions espaciado">
+        <%= f.submit'Guardar Materia', class:"btn colorBackgroundTres colorTextoCinco" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :code %>
-    <%= f.text_field :code %>
-  </div>
-
-  <div class="field">
-    <%= f.label :semester %>
-    <%= f.number_field :semester %>
-  </div>
-
-  <div class="field">
-    <%= f.label :curriculum_id %>
-    <%= f.collection_select :curriculum_id, Curriculum.all, :id, :name, {} %>
-  </div>
-
-  <div class="field">
-    <%= f.label :teacher_id %>
-    <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {} %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
