@@ -1,5 +1,24 @@
-<h1>New Specialty</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Nueva especialidad</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'form', specialty: @specialty %>
+      </div>
+    </div>
+    <br>
+    <%= link_to 'Regresar', specialties_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
 
-<%= render 'form', specialty: @specialty %>
 
-<%= link_to 'Back', specialties_path %>
+
+
+
+<%= render 'partials/footer' %>

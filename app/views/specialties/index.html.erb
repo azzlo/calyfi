@@ -1,29 +1,47 @@
-<p id="notice"><%= notice %></p>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Especialidades</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2">
 
-<h1>Specialties</h1>
+      </div>
+      <div class="col-md-8">
+        <table class="table table-hover">
+          <thead class="colorBackgroundTres colorTextoCinco">
+            <tr>
+              <th class="centrar-texto">Nombre</th>
+              <th class="centrar-texto">Descripcion</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <tbody>
+            <% @specialties.each do |specialty| %>
+              <tr>
+                <td><%= specialty.name %></td>
+                <td><%= specialty.description %></td>
+                <td><%= link_to 'Mostrar', specialty %></td>
+                <td><%= link_to 'Editar', edit_specialty_path(specialty) %></td>
+                <td><%= link_to 'Eliminar', specialty, method: :delete, data: { confirm: 'Esta seguro de eliminar una especialidad?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-  <tbody>
-    <% @specialties.each do |specialty| %>
-      <tr>
-        <td><%= specialty.name %></td>
-        <td><%= specialty.description %></td>
-        <td><%= link_to 'Show', specialty %></td>
-        <td><%= link_to 'Edit', edit_specialty_path(specialty) %></td>
-        <td><%= link_to 'Destroy', specialty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
 
-<br>
+    <br>
 
-<%= link_to 'New Specialty', new_specialty_path %>
+    <%= link_to 'Nueva especialidad', new_specialty_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
+
+<%= render 'partials/footer' %>

@@ -30,37 +30,6 @@
     <%= f.label :Apellido_materno, class:"colorTextoCuatro" %>
     <%= f.text_field :mothers_last_name, class:"form-control colorBorderUno" %>
   </div>
-
-  <div class="field espaciado">
-    <%= f.label :Calle, class:"colorTextoCuatro" %>
-    <%= f.text_field :address, class:"form-control colorBorderUno" %>
-  </div>
-
-  <div class="field espaciado">
-    <%= f.label :Municipio, class:"colorTextoCuatro" %>
-    <%= f.text_field :suburb, class:"form-control colorBorderUno" %>
-  </div>
-
-  <div class="field espaciado">
-    <%= f.label :Ciudad, class:"colorTextoCuatro" %>
-    <%= f.text_field :city, class:"form-control colorBorderUno" %>
-  </div>
-
-  <div class="field espaciado">
-    <%= f.label :Estado, class:"colorTextoCuatro" %>
-    <%= f.text_field :state, class:"form-control colorBorderUno" %>
-  </div>
-
-  <div class="field espaciado">
-    <%= f.label :Codigo_postal, class:"colorTextoCuatro" %>
-    <%= f.text_field :postal_code, class:"form-control colorBorderUno" %>
-  </div>
-
-  <div class="field espaciado">
-    <%= f.label :Fecha_de_nacimiento, class:"colorTextoCuatro" %><br>
-    <%= f.date_select :birthdate, class:"form-control colorBorderUno" %>
-  </div>
-
   <div class="field espaciado">
     <%= f.label :sexo, class:"colorTextoCuatro" %><br>
     <%= f.radio_button(:sex, "Masculino") %>
@@ -85,7 +54,7 @@
     <%= f.select :study_cycle_id, options_for_select(StudyCycle.all.map{ |c| [c.aux_name, c.id] }), {}, class: "form-control" %>
     <%#= f.text_field :specialty_id %>
   </div>
-
+  <br>
   <div class="actions espaciado">
     <%= f.submit 'Crear Alumno', class:"btn colorBackgroundTres colorTextoCinco" %>
   </div>
