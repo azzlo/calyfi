@@ -1,6 +1,25 @@
-<h1>Editing Study Cycle</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Editar ciclo escolar</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
 
-<%= render 'form', study_cycle: @study_cycle %>
-
-<%= link_to 'Show', @study_cycle %> |
-<%= link_to 'Back', study_cycles_path %>
+      <div class="col-md-12 centrar-texto">
+        <%= render 'form', study_cycle: @study_cycle %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <%= link_to 'Mostrar', @study_cycle,  class:"btn colorBackgroundTres colorTextoCinco" %>
+        <%= link_to 'Regresar', study_cycles_path, class:"btn colorBackgroundTres colorTextoCinco"%>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'partials/footer' %>

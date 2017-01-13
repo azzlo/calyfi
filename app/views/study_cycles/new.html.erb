@@ -1,5 +1,23 @@
-<h1>New Study Cycle</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Nuevo ciclo escolar</h1>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <%= render 'form', study_cycle: @study_cycle %>
+      </div>
+    </div>
 
-<%= render 'form', study_cycle: @study_cycle %>
 
-<%= link_to 'Back', study_cycles_path %>
+    <%= link_to 'Regresar', study_cycles_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
+
+
+
+<%= render 'partials/footer' %>
