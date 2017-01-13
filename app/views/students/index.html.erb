@@ -7,7 +7,11 @@
         <h1>Alumnos del CBTa</h1>
       </div>
     </div>
-    <br>
+    <div class="row">
+      <div class="col-md-12 derecha-texto">
+        <%= link_to 'Nuevo alumno', new_student_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-3">
       </div>
@@ -52,12 +56,13 @@
         </table>
       </div>
     </div>
+    </div>
+
 
 
     <br>
 
-    <%= link_to 'Nuevo alumno', new_student_path, class:"btn colorBackgroundTres colorTextoCinco" %>
-  </div>
+
 </div>
 
 <%= render 'partials/footer' %>

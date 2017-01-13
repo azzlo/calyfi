@@ -1,5 +1,17 @@
-<h1>Editing Subject</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-12 centrar-texto">
+        <h1>Editar materia</h1>
+      </div>
+    </div>
 
-<%= render 'form', subject: @subject %>
 
-<%= link_to 'Back', curriculum_path %>
+    <%= render 'form', subject: @subject %>
+
+    <%= link_to 'Regresar', curriculum_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+  </div>
+</div>
+
+<%= render 'partials/footer' %>

@@ -8,7 +8,11 @@
         <h1>Ciclos Escolares</h1>
       </div>
     </div>
-    <br>
+    <div class="row">
+      <div class="col-md-12 derecha-texto">
+        <%= link_to 'Nuevo ciclo escolar', new_study_cycle_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-2">
 
@@ -41,7 +45,7 @@
     <br>
     <br>
 
-    <%= link_to 'Nuevo ciclo escolar', new_study_cycle_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+
   </div>
 </div>
 <%= render 'partials/footer' %>
