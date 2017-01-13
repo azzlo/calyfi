@@ -6,6 +6,12 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = @curriculum.subjects
+    @semester1 = @curriculum.subjects.where(:semester => 1)
+    @semester2 = @curriculum.subjects.where(:semester => 2)
+    @semester3 = @curriculum.subjects.where(:semester => 3)
+    @semester4 = @curriculum.subjects.where(:semester => 4)
+    @semester5 = @curriculum.subjects.where(:semester => 5)
+    @semester6 = @curriculum.subjects.where(:semester => 6)
   end
 
   # GET /subjects/1
