@@ -12,29 +12,24 @@
   <% end %>
   <div class="row">
     <div class="col-md-4">
-
     </div>
     <div class="col-md-4">
       <div class="field espaciado">
         <%= f.label :Nombre_materia, class:"colorTextoCuatro"  %><br>
         <%= f.text_field :name, class:"form-control colorBorderUno" %>
       </div>
-
       <div class="field espaciado">
         <%= f.label :clave, class:"colorTextoCuatro"  %><br>
         <%= f.text_field :code , class:"form-control colorBorderUno"%>
       </div>
-
       <div class="field espaciado">
         <%= f.label :semestre, class:"colorTextoCuatro"  %><br>
         <%= f.number_field :semester, class:"form-control colorBorderUno" %>
       </div>
-
       <div class="field espaciado">
         <%= f.label :Profesor_que_la_imparte, class:"colorTextoCuatro"  %><br>
         <%= f.collection_select :teacher_id, Teacher.all, :id, :name, {}, class: "form-control" %>
       </div>
-
       <div class="field espaciado">
         <%= f.label :depende_de, class:"colorTextoCuatro"  %><br>
         <%= f.collection_select :dependency_subject_id, Subject.all, :id, :name, {}, class: "form-control" %>
@@ -45,5 +40,4 @@
       </div>
     </div>
   </div>
-
 <% end %>

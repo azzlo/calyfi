@@ -17,7 +17,6 @@
         <% if flash[:alert] %>
         <p class="alert"><%= alert %></p>
         <% end %>
-
         <table class="table table-hover">
           <thead class="colorBackgroundTres colorTextoCinco">
             <tr>
@@ -25,7 +24,6 @@
               <th colspan="2">Acciones</th>
             </tr>
           </thead>
-
           <tbody>
             <% @administrators.each do |admin| %>
             <tr>
@@ -37,12 +35,7 @@
           </tbody>
         </table>
       </div>
-
     </div>
-
-
   </div>
-
 </div>
-
 <%= render 'partials/footer' %>

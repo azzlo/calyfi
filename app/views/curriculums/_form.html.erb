@@ -2,7 +2,6 @@
   <% if curriculum.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(curriculum.errors.count, "error") %> prohibited this curriculum from being saved:</h2>
-
       <ul>
       <% curriculum.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,19 +11,16 @@
   <% end %>
   <div class="row">
     <div class="col-md-4">
-
     </div>
     <div class="col-md-4">
       <div class="field espaciado">
         <%= f.label :name, class:"colorTextoCuatro"  %><br>
         <%= f.text_field :name, class:"form-control colorBorderUno" %>
       </div>
-
       <div class="field espaciado">
         <%= f.label :specialty_id, class:"btn" %><br>
         <%= f.collection_select :specialty_id, Specialty.all, :id, :name, {}, class: "form-control" %>
       </div>
-
       <div class="field espaciado">
         <%= f.label :Apartir_del_ciclo_escolar %><br>
         <%= f.collection_select :study_cycle_id, StudyCycle.all, :id, :aux_name, {}, class: "form-control"  %>
@@ -35,7 +31,4 @@
       </div>
     </div>
   </div>
-
-
-
 <% end %>

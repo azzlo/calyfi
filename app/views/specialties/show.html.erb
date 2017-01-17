@@ -4,12 +4,10 @@
   <strong>Name:</strong>
   <%= @specialty.name %>
 </p>
-
 <p>
   <strong>Description:</strong>
   <%= @specialty.description %>
 </p>
-
 <h2>Alumnos asignados</h2>
 <p>
   <table>
@@ -27,6 +25,5 @@
     </tbody>
   </table>
 </p>
-
-<%= link_to 'Edit', edit_specialty_path(@specialty) %> |
-<%= link_to 'Back', specialties_path %>
+<%= link_to 'Editar', edit_specialty_path(@specialty) %> |
+<%= link_to 'Regresar', specialties_path %>
