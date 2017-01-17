@@ -21,13 +21,13 @@
       </div>
 
       <div class="field espaciado">
-        <%= f.label :specialty_id, class:"colorTextoCuatro"  %><br>
-        <%= f.collection_select :specialty_id, Specialty.all, :id, :name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
+        <%= f.label :specialty_id, class:"btn" %><br>
+        <%= f.collection_select :specialty_id, Specialty.all, :id, :name, {}, class: "form-control" %>
       </div>
 
       <div class="field espaciado">
-        <%= f.label :Apartir_del_ciclo_escolar, class:"colorTextoCuatro"  %><br>
-        <%= f.collection_select :study_cycle_id, StudyCycle.all, :id, :aux_name, {}, class:"btn colorBackgroundCinco colorTextoDos colorBorderUno" %>
+        <%= f.label :Apartir_del_ciclo_escolar %><br>
+        <%= f.collection_select :study_cycle_id, StudyCycle.all, :id, :aux_name, {}, class: "form-control"  %>
       </div>
       <br>
       <div class="actions espaciado">
