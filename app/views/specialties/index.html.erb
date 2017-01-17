@@ -7,7 +7,13 @@
         <h1>Especialidades</h1>
       </div>
     </div>
-    <br>
+
+    <div class="row">
+      <div class="col-md-12 derecha-texto">
+        <%= link_to 'Nueva especialidad', new_specialty_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+      </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-2">
 
@@ -40,8 +46,7 @@
 
     <br>
 
-    <%= link_to 'Nueva especialidad', new_specialty_path, class:"btn colorBackgroundTres colorTextoCinco" %>
-  </div>
+
 </div>
 
 <%= render 'partials/footer' %>
