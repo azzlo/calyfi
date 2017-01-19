@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113220237) do
+ActiveRecord::Schema.define(version: 20170119225244) do
+
+  create_table "competences", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "percentage"
+    t.integer  "teacher_id"
+    t.integer  "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_competences_on_subject_id"
+    t.index ["teacher_id"], name: "index_competences_on_teacher_id"
+  end
 
   create_table "curriculums", force: :cascade do |t|
     t.string   "name"

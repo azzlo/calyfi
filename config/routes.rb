@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :competences
   devise_for :users
   resources :curriculums do
     resources :subjects
@@ -7,7 +8,11 @@ Rails.application.routes.draw do
   resources :specialties
   resources :groups
   resources :students
-  resources :teachers
+  resources :teachers do
+    resources :subjects do
+      resources :competences
+    end
+  end
   resources :users
 
   get 'welcome/index'
