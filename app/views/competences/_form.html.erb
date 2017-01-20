@@ -10,28 +10,35 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  <div class="col-md-4">
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
   </div>
+  <div class="col-md-6">
+    <div class="field espaciado">
+      <%= f.label :nombre, class:"colorTextoCuatro" %><br>
+      <%= f.text_field :name, class:"colorBorderUno" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :percentage %>
-    <%= f.number_field :percentage %>
-  </div>
+    <div class="field espaciado">
+      <%= f.label :porcentaje, class:"colorTextoCuatro" %><br>
+      <%= f.number_field :percentage, class:"colorBorderUno" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :teacher_id %>
-    <%= f.text_field :teacher_id %>
-  </div>
+    <div class="field espaciado">
+      <%= f.label :profesor, class:"colorTextoCuatro" %><br>
+      <%= f.text_field :teacher_id , class:"colorBorderUno"%>
+    </div>
 
-  <div class="field">
-    <%= f.label :subject_id %>
-    <%= f.text_field :subject_id %>
-  </div>
+    <div class="field espaciado">
+      <%= f.label :materia, class:"colorTextoCuatro" %><br>
+      <%= f.text_field :subject_id , class:"colorBorderUno"%>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions espaciado">
+      <%= f.submit 'Guardar', class:"btn colorBackgroundTres colorTextoCinco" %>
+    </div>
   </div>
+</div>
+
 <% end %>
