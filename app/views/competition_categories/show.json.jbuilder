@@ -1,0 +1,1 @@
+json.partial! "competition_categories/competition_category", competition_category: @competition_category

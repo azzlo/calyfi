@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @generic_competence_attribute.number %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @generic_competence_attribute.description %>
+</p>
+
+<p>
+  <strong>Generic competence:</strong>
+  <%= @generic_competence_attribute.generic_competence %>
+</p>
+
+<%= link_to 'Edit', edit_generic_competence_attribute_path(@generic_competence_attribute) %> |
+<%= link_to 'Back', generic_competence_attributes_path %>

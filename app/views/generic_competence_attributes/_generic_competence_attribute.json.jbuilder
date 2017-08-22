@@ -1,0 +1,2 @@
+json.extract! generic_competence_attribute, :id, :number, :description, :generic_competence_id, :created_at, :updated_at
+json.url generic_competence_attribute_url(generic_competence_attribute, format: :json)

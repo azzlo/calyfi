@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @generic_competence.number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @generic_competence.name %>
+</p>
+
+<p>
+  <strong>Competition category:</strong>
+  <%= @generic_competence.competition_category %>
+</p>
+
+<%= link_to 'Edit', edit_generic_competence_path(@generic_competence) %> |
+<%= link_to 'Back', generic_competences_path %>

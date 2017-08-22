@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :generic_competence_attributes
+  resources :generic_competences
+  resources :competition_categories
   resources :competences
   devise_for :users
   resources :curriculums do

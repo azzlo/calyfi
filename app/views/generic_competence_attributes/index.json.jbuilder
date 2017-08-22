@@ -1,0 +1,1 @@
+json.array! @generic_competence_attributes, partial: 'generic_competence_attributes/generic_competence_attribute', as: :generic_competence_attribute

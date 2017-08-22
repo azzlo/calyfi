@@ -1,0 +1,2 @@
+module GenericCompetenceAttributesHelper
+end

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Generic Competence Attributes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Description</th>
+      <th>Generic competence</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @generic_competence_attributes.each do |generic_competence_attribute| %>
+      <tr>
+        <td><%= generic_competence_attribute.number %></td>
+        <td><%= generic_competence_attribute.description %></td>
+        <td><%= generic_competence_attribute.generic_competence %></td>
+        <td><%= link_to 'Show', generic_competence_attribute %></td>
+        <td><%= link_to 'Edit', edit_generic_competence_attribute_path(generic_competence_attribute) %></td>
+        <td><%= link_to 'Destroy', generic_competence_attribute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Generic Competence Attribute', new_generic_competence_attribute_path %>

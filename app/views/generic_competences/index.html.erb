@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Generic Competences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Competition category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @generic_competences.each do |generic_competence| %>
+      <tr>
+        <td><%= generic_competence.number %></td>
+        <td><%= generic_competence.name %></td>
+        <td><%= generic_competence.competition_category %></td>
+        <td><%= link_to 'Show', generic_competence %></td>
+        <td><%= link_to 'Edit', edit_generic_competence_path(generic_competence) %></td>
+        <td><%= link_to 'Destroy', generic_competence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Generic Competence', new_generic_competence_path %>

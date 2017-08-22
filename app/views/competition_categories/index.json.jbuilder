@@ -1,0 +1,1 @@
+json.array! @competition_categories, partial: 'competition_categories/competition_category', as: :competition_category

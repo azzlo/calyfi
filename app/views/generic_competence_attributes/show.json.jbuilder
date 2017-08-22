@@ -1,0 +1,1 @@
+json.partial! "generic_competence_attributes/generic_competence_attribute", generic_competence_attribute: @generic_competence_attribute
