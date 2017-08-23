@@ -25,17 +25,16 @@
               <th>Nombre</th>
               <th>Especialidad</th>
               <th>Ciclo escolar</th>
-              <th colspan="3"></th>
+              <th colspan="2"></th>
             </tr>
           </thead>
 
           <tbody>
             <% @curriculums.each do |curriculum| %>
               <tr>
-                <td><%= curriculum.name %></td>
+                <td><%= link_to curriculum.name, curriculum %></td>
                 <td><%= curriculum.specialty.name %></td>
-                <td><%= curriculum.study_cycle %></td>
-                <td><%= link_to 'Mostrar', curriculum %></td>
+                <td><%= curriculum.study_cycle.start_at %> - <%= curriculum.study_cycle.end_at %></td>
                 <td><%= link_to 'Editar', edit_curriculum_path(curriculum) %></td>
                 <td><%= link_to 'Eliminar', curriculum, method: :delete, data: { confirm: 'Esta seguro que desea eliminar la reticula, esto podria afectar a los grupos y aumnos?' } %></td>
               </tr>

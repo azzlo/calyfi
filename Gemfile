@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Gemas Extras
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'material_icons'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

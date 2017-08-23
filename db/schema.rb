@@ -12,16 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170822194935) do
 
-  create_table "attribues", force: :cascade do |t|
-    t.string   "GenericCompetenceAttributes"
-    t.integer  "number"
-    t.text     "description"
-    t.integer  "generic_competence_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.index ["generic_competence_id"], name: "index_attribues_on_generic_competence_id"
-  end
-
   create_table "competences", force: :cascade do |t|
     t.string   "name"
     t.integer  "percentage"
@@ -48,15 +38,6 @@ ActiveRecord::Schema.define(version: 20170822194935) do
     t.datetime "updated_at",     null: false
     t.index ["specialty_id"], name: "index_curriculums_on_specialty_id"
     t.index ["study_cycle_id"], name: "index_curriculums_on_study_cycle_id"
-  end
-
-  create_table "generic_compence_attributes", force: :cascade do |t|
-    t.integer  "number"
-    t.text     "description"
-    t.integer  "generic_competence_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.index ["generic_competence_id"], name: "index_generic_compence_attributes_on_generic_competence_id"
   end
 
   create_table "generic_competence_attributes", force: :cascade do |t|

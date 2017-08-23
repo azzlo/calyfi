@@ -49,7 +49,7 @@ StudyCycle.create!(start_at: Date.new(2017,1,14), end_at: Date.new(2017,6,30))
 
 # Curriculum creation
 Specialty.all.each do  |specialty|
-  Curriculum.create!(name: "Especialidad en #{specialty}", specialty_id: specialty.id, study_cycle_id: StudyCycle.first.id)
+  Curriculum.create!(name: "Especialidad en #{specialty.name}", specialty_id: specialty.id, study_cycle_id: StudyCycle.first.id)
 end
 
 150.times do |counter|

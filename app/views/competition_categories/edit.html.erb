@@ -1,6 +1,10 @@
-<h1>Editing Competition Category</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+	
+	<h1>Editando Categoria <small>Competencias</small></h1>
 
-<%= render 'form', competition_category: @competition_category %>
+	<%= render 'form', competition_category: @competition_category %>
 
-<%= link_to 'Show', @competition_category %> |
-<%= link_to 'Back', competition_categories_path %>
+	<%= link_to 'Atras', competition_categories_path %>
+</div>
+<%= render 'partials/footer' %>

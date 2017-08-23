@@ -11,22 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :number %>
-    <%= f.number_field :number %>
-  </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      
+      <div class="form-group">
+        <%= f.label :number, 'Numeración' %>
+        <%= f.number_field :number, class: 'form-control', min: 1 %>
+      </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+      <div class="form-group">
+        <%= f.label :description, 'Descripción' %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :generic_competence_id %>
-    <%= f.text_field :generic_competence_id %>
-  </div>
+      <div class="form-group">
+        <%= f.label :generic_competence_id, 'Pertenece a la Competencia:' %>
+        <%= f.select :generic_competence_id, GenericCompetence.all.collect { |c| [ c.number.to_s + ' ' + c.name, c.id]}, {}, class: 'form-control' %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="column-12 text-right">
+        <%= f.submit class: 'btn-lg btn-primary' %>
+      </div>
+    </div>
+    <div class="col"></div>
   </div>
 <% end %>

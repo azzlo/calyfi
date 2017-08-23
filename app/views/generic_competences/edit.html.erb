@@ -1,6 +1,10 @@
-<h1>Editing Generic Competence</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+	
+	<h1>Editando Competencia</h1>
 
-<%= render 'form', generic_competence: @generic_competence %>
+	<%= render 'form', generic_competence: @generic_competence %>
 
-<%= link_to 'Show', @generic_competence %> |
-<%= link_to 'Back', generic_competences_path %>
+	<%= link_to '<= Adminstrar Competencias', competition_categories_url %>
+</div>
+<%= render 'partials/footer' %>

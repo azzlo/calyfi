@@ -1,6 +1,8 @@
-<h1>Editing Generic Competence Attribute</h1>
-
-<%= render 'form', generic_competence_attribute: @generic_competence_attribute %>
-
-<%= link_to 'Show', @generic_competence_attribute %> |
-<%= link_to 'Back', generic_competence_attributes_path %>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+	
+	<h1>Editando Atributo de Competencia</h1>
+	<%= render 'form', generic_competence_attribute: @generic_competence_attribute %>
+	<%= link_to '<= Administrar Competencias', competition_categories_path %>
+</div>
+<%= render 'partials/footer' %>

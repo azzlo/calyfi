@@ -11,22 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :number %>
-    <%= f.number_field :number %>
-  </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <div class="form-group">  
+        <div class="field">
+          <%= f.label :number, 'Numeración' %>
+          <%= f.number_field :number, class: 'form-control' %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+      <div class="form-group">
+          <%= f.label :name, 'Nombre' %>
+          <%= f.text_field :name, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :competition_category_id %>
-    <%= f.text_field :competition_category_id %>
-  </div>
+      <div class="form-group">
+          <%= f.label :competition_category_id, 'Pertenece a la Categoria:' %>
+          <%= f.select :competition_category_id, CompetitionCategory.all.collect { |cc| [cc.number.to_s + '. ' + cc.name, cc.id] }, {}, class: 'form-control' %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <br>
+      <div class="col-12 text-right">
+        <%= f.submit class: 'btn-lg btn-primary' %>
+      </div>
+    </div>
+    <div class="col"></div>
   </div>
 <% end %>

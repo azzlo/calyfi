@@ -10,6 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ /*
+  *= require material_icons
  */
 
 @import "bootstrap";
@@ -182,18 +184,3 @@ p{
   width: 90%;
   height: auto;
 }
-
-.centrar-texto{
-  text-align: center;
-}
-.derecha-texto{
-  text-align: right;
-}
-ul{
-  list-style: none;
-}
-li{
-  list-style: none;
-  list-style-type: none;
-}
-
