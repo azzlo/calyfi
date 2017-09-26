@@ -28,7 +28,7 @@ class SpecialtiesController < ApplicationController
 
     respond_to do |format|
       if @specialty.save
-        format.html { redirect_to @specialty, notice: 'Specialty was successfully created.' }
+        format.html { redirect_to specialties_url, notice: 'Specialty was successfully created.' }
         format.json { render :show, status: :created, location: @specialty }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SpecialtiesController < ApplicationController
   def update
     respond_to do |format|
       if @specialty.update(specialty_params)
-        format.html { redirect_to @specialty, notice: 'Specialty was successfully updated.' }
+        format.html { redirect_to specialties_url, notice: 'Specialty was successfully updated.' }
         format.json { render :show, status: :ok, location: @specialty }
       else
         format.html { render :edit }

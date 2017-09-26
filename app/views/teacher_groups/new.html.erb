@@ -1,0 +1,14 @@
+<%= render 'partials/header' %>
+
+<div class="contenedor-principal">
+  <div class="margenes">
+
+    <h1>Nueva asignación</h1>
+
+    <%= render 'form', teacher_group: @teacher_group %>
+
+    <%= link_to 'Back', teacher_groups_path %>
+  </div>
+</div>
+
+<%= render 'partials/footer' %>

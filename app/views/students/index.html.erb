@@ -3,23 +3,11 @@
   <div class="margenes">
     <p id="notice"><%= notice %></p>
     <div class="row">
-      <div class="col-md-12 centrar-texto">
+      <div class="col-md-8">
         <h1>Alumnos del CBTa</h1>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 derecha-texto">
-        <%= link_to 'Nuevo alumno', new_student_path, class:"btn colorBackgroundTres colorTextoCinco" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-      </div>
-      <div class="col-md-6">
-        <div class="input-group">
-          <span class="input-group-addon  colorTextoCuatro">Buscar Alumno</span>
-          <input type="text" class="form-control" placeholder="Nombre del alumno">
-        </div>
+      <div class="col-md-4 text-right">
+        <%= link_to '+ Nuevo alumno', new_student_path, class:"btn btn-primary" %>
       </div>
     </div>
     <br>

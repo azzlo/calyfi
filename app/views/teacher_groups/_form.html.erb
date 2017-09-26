@@ -1,0 +1,52 @@
+<%= form_for(teacher_group) do |f| %>
+  <% if teacher_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(teacher_group.errors.count, "error") %> prohibited this teacher_group from being saved:</h2>
+
+      <ul>
+      <% teacher_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :teacher_id, 'Maestro' %>
+        <%= f.select :teacher_id, Teacher.all.map { |teacher| [teacher.full_name, teacher.id] },{}, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :group_id, 'Grupo' %>
+        <%= f.select :group_id, Group.all.to_a.sort_by(&:full_name).map { |group| [group.full_name, group.id] },{}, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      
+      <div class="form-group">
+        <%= f.label :subject, 'Materia' %>
+        <%= f.text_field :subject, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      
+      <div class="form-group">
+        <%= f.label :period, 'Periodo' %>
+        <%= f.text_field :period, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

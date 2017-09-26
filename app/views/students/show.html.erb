@@ -1,61 +1,63 @@
 <%= render 'partials/header' %>
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Enrollment:</strong>
-  <%= @student.enrollment %>
-</p>
+<div class="contenedor-principal">
+  
+  <p>
+    <strong>Matricula:</strong>
+    <%= @student.enrollment %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+  <p>
+    <strong>Nombres:</strong>
+    <%= @student.name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
+  <p>
+    <strong>Apellido Paterno:</strong>
+    <%= @student.last_name %>
+  </p>
 
-<p>
-  <strong>Mothers last name:</strong>
-  <%= @student.mothers_last_name %>
-</p>
+  <p>
+    <strong>Apellido Materno:</strong>
+    <%= @student.mothers_last_name %>
+  </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @student.address %>
-</p>
+  <p>
+    <strong>Dirección:</strong>
+    <%= @student.address %>
+  </p>
 
-<p>
-  <strong>Suburb:</strong>
-  <%= @student.suburb %>
-</p>
+  <p>
+    <strong>Colonia:</strong>
+    <%= @student.suburb %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @student.city %>
-</p>
+  <p>
+    <strong>Ciudad:</strong>
+    <%= @student.city %>
+  </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @student.state %>
-</p>
+  <p>
+    <strong>Estado:</strong>
+    <%= @student.state %>
+  </p>
 
-<p>
-  <strong>Postal code:</strong>
-  <%= @student.postal_code %>
-</p>
+  <p>
+    <strong>Codigo Postal:</strong>
+    <%= @student.postal_code %>
+  </p>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @student.birthdate %>
-</p>
+  <p>
+    <strong>Fecha de Nacimiento:</strong>
+    <%= @student.birthdate %>
+  </p>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @student.sex %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+  <p>
+    <strong>Sexo:</strong>
+    <%= @student.sex %>
+  </p>
+  <%= link_to 'Ver Reticula', student_subjects_path(@student) %> |
+  <%= link_to 'Editar Información', edit_student_path(@student) %> |
+  <%= link_to 'Todos los Alumnos', students_path %>
+</div>
 <%= render 'partials/footer' %>

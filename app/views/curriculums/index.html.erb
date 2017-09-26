@@ -1,24 +1,20 @@
 <%= render 'partials/header' %>
 <div class="contenedor-principal">
   <div class="margenes">
-    <p id="notice"><%= notice %></p>
-
-    <div class="row">
-      <div class="col-md-12 centrar-texto">
-        <h1>Reticulas de estudios</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 derecha-texto">
-          <%= link_to 'Nueva reticula', new_curriculum_path, class:"btn colorBackgroundTres colorTextoCinco"  %>
-      </div>
-    </div>
-    <br>
     <div class="row">
       <div class="col-md-1">
 
       </div>
       <div class="col-md-10">
+
+        <div class="row">
+          <div class="col-md-8">
+            <h1>Reticulas de estudios</h1>
+          </div>
+          <div class="col-md-4 text-right">
+              <%= link_to '+ Nueva reticula', new_curriculum_path, class:"btn btn-primary"  %>
+          </div>
+        </div>
         <table class="table table-hover">
           <thead class="colorBackgroundTres colorTextoCinco">
             <tr>
@@ -43,47 +39,6 @@
         </table>
       </div>
     </div>
-
-    <br>
-    <div class="row">
-      <div class="col-md-3 centrar-texto">
-        <h3>Año de publicacion</h3>
-      </div>
-      <div class="col-md-9 centrar-texto">
-        <h3>Especialidad de la reticula</h3>
-      </div>
-    </div>
-    <div class="row colorBorderUno">
-      <div class="col-md-3 centrar-texto ">
-        <h1>2016</h1>
-      </div>
-      <div class="col-md-3 btn colorBackgroundCuatro ">
-        <h3>clave_matricula</h3>
-      </div>
-      <div class="col-md-3 btn colorBackgroundCinco ">
-        <h3>clave_matricula</h3>
-      </div>
-      <div class="col-md-3 btn colorBackgroundUno ">
-        <h3>clave_matricula</h3>
-      </div>
-    </div>
-  
-    <div class="row colorBorderUno">
-      <div class="col-md-3 centrar-texto ">
-        <h1>2016</h1>
-      </div>
-      <div class="col-md-3 btn colorBackgroundCuatro ">
-        <h3>clave_matricula</h3>
-      </div>
-      <div class="col-md-3 btn colorBackgroundCinco ">
-        <h3>clave_matricula</h3>
-      </div>
-      <div class="col-md-3 btn colorBackgroundUno ">
-        <h3>clave_matricula</h3>
-      </div>
-    </div>
-
-
   </div>
 </div>
 

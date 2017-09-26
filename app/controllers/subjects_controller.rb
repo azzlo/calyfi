@@ -35,7 +35,7 @@ class SubjectsController < ApplicationController
   
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to curriculum_path(@subject.curriculum), notice: 'Subject was successfully created.' }
+        format.html { redirect_to curriculum_path(@curriculum), notice: 'Subject was successfully created.' }
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }

@@ -1,0 +1,1 @@
+json.array! @teacher_groups, partial: 'teacher_groups/teacher_group', as: :teacher_group

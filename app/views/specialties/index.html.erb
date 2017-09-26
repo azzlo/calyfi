@@ -1,30 +1,26 @@
 <%= render 'partials/header' %>
 <div class="contenedor-principal">
   <div class="margenes">
-    <p id="notice"><%= notice %></p>
     <div class="row">
       <div class="col-md-12 centrar-texto">
-        <h1>Especialidades</h1>
+        <h1 class="text-center">Especialidades</h1>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12 derecha-texto">
-        <%= link_to 'Nueva especialidad', new_specialty_path, class:"btn colorBackgroundTres colorTextoCinco" %>
-      </div>
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-2">
 
       </div>
       <div class="col-md-8">
+        <div class="col-md-12 text-right">
+          <%= link_to '+ Nueva especialidad', new_specialty_path, class:"btn btn-primary" %>
+        </div>
         <table class="table table-hover">
           <thead class="colorBackgroundTres colorTextoCinco">
             <tr>
               <th class="centrar-texto">Nombre</th>
               <th class="centrar-texto">Descripcion</th>
-              <th colspan="3"></th>
+              <th colspan="2"></th>
             </tr>
           </thead>
 
@@ -33,20 +29,15 @@
               <tr>
                 <td><%= specialty.name %></td>
                 <td><%= specialty.description %></td>
-                <td><%= link_to 'Mostrar', specialty %></td>
                 <td><%= link_to 'Editar', edit_specialty_path(specialty) %></td>
                 <td><%= link_to 'Eliminar', specialty, method: :delete, data: { confirm: 'Esta seguro de eliminar una especialidad?' } %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
-
       </div>
     </div>
-
-    <br>
-
-
+  </div> 
 </div>
 
 <%= render 'partials/footer' %>

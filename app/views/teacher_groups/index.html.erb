@@ -1,0 +1,39 @@
+<%= render 'partials/header' %>
+
+<div class="contenedor-principal">
+  <div class="margenes">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Grupos Asignados</h1>
+      </div>
+      <div class="col-md-4 text-right">
+        <%= link_to '+ Nueva Asignación', new_teacher_group_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Materia</th>
+          <th>Maestro</th>
+          <th>Grupo</th>
+          <th>Periodo</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>      
+      <% @teacher_groups.each do |teacher_group| %>
+        <tr>
+          <td><%= teacher_group.subject %></td>
+          <td><%= teacher_group.teacher.full_name %></td>
+          <td><%= teacher_group.group.full_name %></td>
+          <td><%= teacher_group.period %></td>
+          <td><%= link_to 'Show', teacher_group %></td>
+          <td><%= link_to 'Edit', edit_teacher_group_path(teacher_group) %></td>
+          <td><%= link_to 'Destroy', teacher_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
+    <br>
+  </div>
+</div>
+
+<%= render 'partials/footer' %>

@@ -1,24 +1,40 @@
 <%= render 'partials/header' %>
+
 <div class="contenedor-principal">
   <div class="margenes">
-      <p id="notice"><%= notice %></p>
     <div class="row">
       <div class="col-md-12 centrar-texto">
-        <h1>Detalles del grupo</h1>
+        <h1>Grupo <strong><%= @group.semester.to_s + @group.letter %></strong> <%= @group.specialty %>
+          <%= link_to 'Editar', edit_group_path(@group), class:"btn colorBackgroundTres colorTextoCinco" %>
+          <%= link_to 'Ver grupos', groups_path, class: 'btn' %>
+          <small><%= @group.generation %></small>
+        </h1>
       </div>
     </div>
+    <br>
 
-
-    <p>
-      <strong>Name:</strong>
-      <%= @group.name %>
-    </p>
-
-
-    <%= link_to 'Editar', edit_group_path(@group), class:"btn colorBackgroundTres colorTextoCinco" %>
-    <%= link_to 'Regresar', groups_path, class:"btn colorBackgroundTres colorTextoCinco" %>
+    <h3>Listado de alumnos</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="150">Matricula</th>
+          <th>Nombre completo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @group.students.order(last_name: 'asc').each do |student| %>
+          <tr>
+            <td><%= student.enrollment %></td>
+            <td>
+              <%= student.last_name + ' ' + student.mothers_last_name%>
+              <strong><i><%= student.name %></i></strong> 
+              <%= link_to 'ver', student%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
-
 
 <%= render 'partials/footer' %>

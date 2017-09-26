@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822194935) do
+ActiveRecord::Schema.define(version: 20170922201728) do
 
   create_table "competences", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20170822194935) do
     t.index ["study_cycle_id"], name: "index_curriculums_on_study_cycle_id"
   end
 
+  create_table "evaluation_periods", force: :cascade do |t|
+    t.date     "start_at"
+    t.date     "end_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "generic_competence_attributes", force: :cascade do |t|
     t.integer  "number"
     t.text     "description"
@@ -62,6 +69,10 @@ ActiveRecord::Schema.define(version: 20170822194935) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "specialty"
+    t.string   "generation"
+    t.integer  "semester"
+    t.string   "letter"
   end
 
   create_table "specialties", force: :cascade do |t|
@@ -128,6 +139,17 @@ ActiveRecord::Schema.define(version: 20170822194935) do
     t.datetime "updated_at",            null: false
     t.index ["curriculum_id"], name: "index_subjects_on_curriculum_id"
     t.index ["teacher_id"], name: "index_subjects_on_teacher_id"
+  end
+
+  create_table "teacher_groups", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.integer  "group_id"
+    t.string   "subject"
+    t.string   "period"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_teacher_groups_on_group_id"
+    t.index ["teacher_id"], name: "index_teacher_groups_on_teacher_id"
   end
 
   create_table "teachers", force: :cascade do |t|

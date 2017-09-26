@@ -40,7 +40,7 @@ last_user.save
 end
 
 # Especialidades
-['Informatica', 'Agronomo', 'Secretariado', 'Charro'].each do |specialty|
+['Técnico Agropecuario', 'Técnico en Informática', 'Técnico en Administración', 'Técnico en Artes de la Charrería'].each do |specialty|
   Specialty.create!(name: specialty)
 end
 

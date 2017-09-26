@@ -16,6 +16,10 @@
 
 @import "bootstrap";
 
+small{
+  color: #9E9E9E;
+}
+
 body{
   font-family: 'Droid Sans', sans-serif;
   background-color: #8EC09A;
@@ -37,6 +41,17 @@ p{
   font-size: 16px;
   font-weight: normal;
 }
+
+ul{
+  &.my-menu{
+    list-style: none;
+  }
+}
+
+#navbar{
+  background-color: white;
+}
+
 .contenedor-principal{
   background-color: white;
   margin-left: 5%;
@@ -138,6 +153,15 @@ p{
   height: 100%;
 }
 
+.flash-message{
+  height: 3.3em;
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+  box-shadow: 1px 1px 7px #424242;
+  z-index: 99;
+}
+
 .img-fw {
   width: 100%
 }
@@ -149,6 +173,12 @@ p{
 .login-header img {
   width: 100%;
   margin-bottom: 2em;
+}
+
+.login-logo{
+  img{
+    height: 270px;
+  }
 }
 
 .login-main img{
@@ -170,6 +200,12 @@ p{
 
 .semifooter {
   height: 60px;
+}
+
+.teacher-avatar{
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px grey;
 }
 
 .text-center {

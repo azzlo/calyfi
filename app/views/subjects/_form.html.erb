@@ -32,7 +32,7 @@
       </div>
       <div class="field espaciado">
         <%= f.label :depende_de, class:"colorTextoCuatro"  %><br>
-        <%= f.collection_select :dependency_subject_id, Subject.all, :id, :name, {}, class: "form-control" %>
+        <%= f.collection_select :dependency_subject_id, Subject.all, :id, :name, {include_blank: '-Ninguna-'}, class: "form-control" %>
       </div>
       <br>
       <div class="actions espaciado">

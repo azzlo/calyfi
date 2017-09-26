@@ -2,39 +2,34 @@
 <%= render 'partials/header' %>
 <div class="contenedor-principal">
   <div class="margenes">
-    <p id="notice"><%= notice %></p>
-    <div class="row">
-      <div class="col-md-12 centrar-texto">
-        <h1>Ciclos Escolares</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 derecha-texto">
-        <%= link_to 'Nuevo ciclo escolar', new_study_cycle_path, class:"btn colorBackgroundTres colorTextoCinco" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
+    <div class="row justify-content-center">
+      <div class="col-md-8 ">
+        <div class="row">
+          <div class="col-md-8">
+            <h1>Ciclos Escolares</h1>          
+          </div>
+          <div class="col-md-4 text-right">
+            <%= link_to '+ Nuevo ciclo escolar', new_study_cycle_path, class:"btn btn-primary" %>
+          </div>
+        </div>
 
-      </div>
-      <div class="col-md-8">
+
         <table class="table table-hover">
           <thead class="colorBackgroundTres colorTextoCinco">
             <tr>
               <th>Inicio de ciclo</th>
               <th>Fin de ciclo</th>
-              <th colspan="3"></th>
+              <th width="30" colspan="3"></th>
             </tr>
           </thead>
 
           <tbody>
             <% @study_cycles.each do |study_cycle| %>
               <tr>
-                <td><%= study_cycle.start_at %></td>
-                <td><%= study_cycle.end_at %></td>
-                <td><%= link_to 'Mostar', study_cycle %></td>
+                <td><h4><%= study_cycle.start_at %></h4></td>
+                <td><h4><%= study_cycle.end_at %></h4></td>
                 <td><%= link_to 'Editar', edit_study_cycle_path(study_cycle) %></td>
-                <td><%= link_to 'Eliminar', study_cycle, method: :delete, data: { confirm: 'Realmente desea aleminar el ciclo?' } %></td>
+                <td><%= link_to 'Eliminar', study_cycle, method: :delete, data: { confirm: 'Realmente desea eliminar el ciclo escolar?' } %></td>
               </tr>
             <% end %>
           </tbody>

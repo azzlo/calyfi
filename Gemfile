@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Gemas Extras
 gem 'devise'
+gem 'devise-i18n'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'material_icons'
 
@@ -49,7 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   # Para generar diagrama entidad relación
-  gem 'rails-erd'
+  gem 'rails-erd', require: true
 
   gem 'faker'
 end

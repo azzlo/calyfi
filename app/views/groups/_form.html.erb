@@ -10,21 +10,51 @@
       </ul>
     </div>
   <% end %>
-<div class="row">
-  <div class="col-md-12">
-    <div class="field espaciado">
-      <%= f.label :Nombre, class:"colorTextoCuatro"%>
-      <%= f.text_field :name, class:"colorBorderUno" %>
+  <div class="row justify-content-md-center">
+
+    <!-- <div class="col-md-4">
+      <div class="form-group">
+        <%# f.label :name, 'Nombre'%>
+        <%# f.text_field :name, class: 'form-control' %>
+      </div>
+    </div> -->
+
+    <div class="col-md-1">
+      <div class="form-group">
+        <%= f.label :semester, 'Semestre' %>
+        <%= f.select :semester, (1..6) , {}, class: 'form-control' %>
+      </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="actions">
-      <%= f.submit 'Crear Grupo', class:"btn colorBackgroundTres colorTextoCinco" %>
+
+    <div class="col-md-1">
+      <div class="form-group">
+        <%= f.label :letter, 'Letra' %>
+        <%= f.select :letter, %w(A B C D E F G H), {}, class: 'form-control' %>
+      </div>
     </div>
-  </div>
-</div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :specialty, 'Especialidad' %>
+        <%= f.text_field :specialty, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :generation, 'Generacion' %>
+        <%= f.text_field :generation, class: 'form-control' %>
+      </div>
+    </div>
 
 
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <div class="actions">
+        <%= f.submit 'Guardar', class:"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 <% end %>

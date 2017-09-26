@@ -8,28 +8,17 @@
 
     <% if current_user.admin_role %>
       <div class="row">
-        <div class="col-md-3">
-          <%= image_tag "photo.png"%>
-          <h5>Bienvenido</h5>
-          <p>
-            <%= current_user.email %>
-          </p>
-          <h5>Semestre Actual</h5>
-          <p>
-            Lorem ipsum dolor sit amet,
-          </p>
-
-        </div>
-        <div class="col-md-6">
-          <ul>
-            <li><%= link_to "Administradores", users_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "Profesores", teachers_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "Grupos", groups_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "Especialidades", specialties_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "Alumnos", students_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "Ciclo Escolar", study_cycles_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "Planes de estudios", curriculums_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li> <li><%= link_to "Administrar plan de Competencias", competition_categories_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-          </ul>
+        
+        <div class="col-md-9">
+            <%= link_to "Administradores", users_path, class:"btn btn-lg btn-outline-primary" %>
+            <%= link_to "Profesores", teachers_path, class:"btn btn-lg btn-outline-primary " %>
+            <%= link_to "Grupos", groups_path, class:"btn btn-lg btn-outline-primary " %>
+            <!-- <%#= link_to "Especialidades", specialties_path, class:"btn btn-lg btn-outline-primary " %> -->
+            <%= link_to "Alumnos", students_path, class:"btn btn-lg btn-outline-primary " %>
+            <!-- <%# link_to "Ciclo Escolar", study_cycles_path, class:"btn btn-lg btn-outline-primary " %> -->
+            <%# link_to "Planes de estudios", curriculums_path, class:"btn btn-lg btn-outline-primary " %>
+            <%= link_to "Administrar plan de Competencias", competition_categories_path, class:"btn btn-lg btn-outline-primary " %>
+            <%= link_to "Asignar grupos", teacher_groups_path, class:"btn btn-lg btn-outline-primary " %>
         </div>
         <div class="col-md-3">
           <div class="col-md-12">
@@ -51,55 +40,40 @@
     <% else %>
 
       <div class="row">
-        <div class="col-md-4">
-          <%= image_tag "logo.png", class: 'Wfoto' %>
-        </div>
-        <div class="col-md-4">
-          <h5>Datos Generales del Docente</h5>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <h5>Semestre Actual</h5>
-          <p>
-            Lorem ipsum dolor sit amet,
-          </p>
-
-        </div>
-        <div class="col-md-4">
-          <%= image_tag "logo.png", class: 'Wlogo' %>
-        </div>
-
-      </div>
-
-      <br><br>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="list-group colorBackgroundTres colorTextoCinco">
-            <button type="button" class="list-group-item list-group-item-action active ">
-              Grupos a Cargo
-            </button>
-            <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-            <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-            <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-            <button type="button" class="list-group-item list-group-item-action ">Vestibulum at eros</button>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <%= image_tag 'teacher-noimage', class: 'teacher-avatar' %>
+            </div>
+            <div class="col-md-8">
+              <h3>Datos generales del docente</h3>
+              <hr>
+              <h5><strong><%= current_user.teacher.full_name %></strong></h5>
+              <p><%= current_user.email %></p>
+            </div>
           </div>
 
-        </div>
-        <div class="col-md-2">
+          <hr>
+
+          <h2>Mis Grupos</h2>
+
+          <% @teacher_groups.each do |group| %>
+            <p><%= group.group.full_name %> - <%= link_to group.subject, group %></p>
+          <% end %>
 
         </div>
+
         <div class="col-md-3">
-          <ul>
-            <li><%= link_to "Quimica", users_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "Fisica", teachers_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-            <li><%= link_to "matematicas ", groups_path, class:"btn colorBackgroundTres colorTextoCinco btn-lg btn-block colorBorderCinco" %></li>
-          </ul>
+          <%= image_tag "logo.png", class: 'Wlogo' %>
+          <br><br>
+          <h1>Calendar</h1>
+          <br><br>
         </div>
       </div>
 
+
+
     <% end %>
-
-
 
     <br><br>
     <div class="row semifooter">

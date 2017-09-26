@@ -1,93 +1,23 @@
 <%= render 'partials/header' %>
 <div class="contenedor-principal">
-  <div class="margenes">
-    <p id="notice"><%= notice %></p>
-    <div class="row">
-      <div class="col-md-12 centrar-texto">
-        <h1>Grupos</h1>
-      </div>
+  <div class="row">
+    <div class="col-md-8 ">
+      <h1>Grupos</h1>
     </div>
-    <div class="row">
-      <div class="col-md-12 derecha-texto">
-          <%= link_to 'Nuevo Grupo', new_group_path, class:"btn colorBackgroundTres colorTextoCinco"%>
-      </div>
+    <div class="col-md-4 text-right">
+      <%= link_to '+ Nuevo Grupo', new_group_path, class:"btn btn-primary"%>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-      </div>
-      <div class="col-md-6">
-        <div class="input-group">
-          <span class="input-group-addon">Buscar Grupo</span>
-          <input type="text" class="form-control" placeholder="Nombre del grupo">
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active colorTextoCuatro" data-toggle="tab" href="#home" role="tab">Todos</a>
-          </li>
-          <% @specialties.each do |specialty| %>
-            <li class="nav-item">
-              <a class="nav-link colorTextoCuatro" data-toggle="tab" href="#specialty<%= "#{specialty.id}" %>" role="tab"><%= specialty.name %></a>
-            </li>
-          <% end %>
-        </ul>
-
-        <div class="tab-content">
-          <div class="tab-pane active" id="home" role="tabpanel">
-            <br>
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th colspan="3"></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% @groups.each do |group| %>
-                  <tr>
-                    <td><%= group.name %></td>
-                    <td ><%= link_to 'Mostrar', group %></td>
-
-                    <td><%= link_to 'Editar', edit_group_path(group) %></td>
-                    <td><%= link_to 'Eliminar', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-          <% @specialties.each do |specialty| %>
-            <div class="tab-pane" id="specialty<%= "#{specialty.id}" %>" role="tabpanel">
-              <br>
-              <% ['a','b','c','d','e','f'].map.each do |char| %>
-              <div class="col-lg-2">
-                <button type="btn btn-outline-info" name="button"><%= char.capitalize %></button>
-              </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-
-      </div>
-    </div>
-    <br>
-
-
-
-
-    <br>
-
-
-    <br>
   </div>
 
+  <% @groups.each do |group| %>
+    <h3>
+      <%= link_to group.full_name, group %>
+      <small><%= group.generation %></small>
+      <%= link_to 'editar', edit_group_path(group), class: 'btn btn-outline-secondary' %>
+    </h3>
+    <hr>
+  <% end %>
+
 </div>
-
-
 
 <%= render 'partials/footer' %>
