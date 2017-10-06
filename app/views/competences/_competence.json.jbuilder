@@ -1,0 +1,2 @@
+json.extract! competence, :id, :evidence, :evaluation_tool, :generic_competence_attribute_id, :percentage, :competence_period_id, :created_at, :updated_at
+json.url competence_url(competence, format: :json)

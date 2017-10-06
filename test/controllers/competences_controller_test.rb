@@ -17,7 +17,7 @@ class CompetencesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create competence" do
     assert_difference('Competence.count') do
-      post competences_url, params: { competence: { name: @competence.name, percentage: @competence.percentage, subject_id: @competence.subject_id, teacher_id: @competence.teacher_id } }
+      post competences_url, params: { competence: { competence_period_id: @competence.competence_period_id, evaluation_tool: @competence.evaluation_tool, evidence: @competence.evidence, generic_competence_attribute_id: @competence.generic_competence_attribute_id, percentage: @competence.percentage } }
     end
 
     assert_redirected_to competence_url(Competence.last)
@@ -34,7 +34,7 @@ class CompetencesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update competence" do
-    patch competence_url(@competence), params: { competence: { name: @competence.name, percentage: @competence.percentage, subject_id: @competence.subject_id, teacher_id: @competence.teacher_id } }
+    patch competence_url(@competence), params: { competence: { competence_period_id: @competence.competence_period_id, evaluation_tool: @competence.evaluation_tool, evidence: @competence.evidence, generic_competence_attribute_id: @competence.generic_competence_attribute_id, percentage: @competence.percentage } }
     assert_redirected_to competence_url(@competence)
   end
 

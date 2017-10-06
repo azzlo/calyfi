@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   get '/students/:id/subjects', to: 'students#subjects', as: 'student_subjects'
   resources :teachers do
     resources :subjects do
-      resources :competences
-    end
+        end
   end
   resources :users
 

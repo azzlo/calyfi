@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  percentage: 1
-  teacher: one
-  subject: one
+  evidence: MyString
+  evaluation_tool: MyString
+  generic_competence_attribute: one
+  percentage: MyString
+  competence_period: one
 
 two:
-  name: MyString
-  percentage: 1
-  teacher: two
-  subject: two
+  evidence: MyString
+  evaluation_tool: MyString
+  generic_competence_attribute: two
+  percentage: MyString
+  competence_period: two

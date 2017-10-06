@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Evidence:</strong>
+  <%= @competence.evidence %>
+</p>
+
+<p>
+  <strong>Evaluation tool:</strong>
+  <%= @competence.evaluation_tool %>
+</p>
+
+<p>
+  <strong>Generic competence attribute:</strong>
+  <%= @competence.generic_competence_attribute %>
+</p>
+
+<p>
+  <strong>Percentage:</strong>
+  <%= @competence.percentage %>
+</p>
+
+<p>
+  <strong>Competence period:</strong>
+  <%= @competence.competence_period %>
+</p>
+
+<%= link_to 'Edit', edit_competence_path(@competence) %> |
+<%= link_to 'Back', competences_path %>

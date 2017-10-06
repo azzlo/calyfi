@@ -1,0 +1,42 @@
+<%= form_for(competence) do |f| %>
+  <% if competence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(competence.errors.count, "error") %> prohibited this competence from being saved:</h2>
+
+      <ul>
+      <% competence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :evidence %>
+    <%= f.text_field :evidence %>
+  </div>
+
+  <div class="field">
+    <%= f.label :evaluation_tool %>
+    <%= f.text_field :evaluation_tool %>
+  </div>
+
+  <div class="field">
+    <%= f.label :generic_competence_attribute_id %>
+    <%= f.text_field :generic_competence_attribute_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :percentage %>
+    <%= f.text_field :percentage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :competence_period_id %>
+    <%= f.text_field :competence_period_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006213624) do
+ActiveRecord::Schema.define(version: 20171006232832) do
 
   create_table "competence_periods", force: :cascade do |t|
     t.date     "start_at"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20171006213624) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["teacher_group_id"], name: "index_competence_periods_on_teacher_group_id"
+  end
+
+  create_table "competences", force: :cascade do |t|
+    t.string   "evidence"
+    t.string   "evaluation_tool"
+    t.integer  "generic_competence_attribute_id"
+    t.string   "percentage"
+    t.integer  "competence_period_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["competence_period_id"], name: "index_competences_on_competence_period_id"
+    t.index ["generic_competence_attribute_id"], name: "index_competences_on_generic_competence_attribute_id"
   end
 
   create_table "competition_categories", force: :cascade do |t|
