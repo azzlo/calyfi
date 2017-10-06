@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :evaluation_periods
-  resources :teacher_groups
+  resources :teacher_groups do
+    resources :competence_periods
+  end
   resources :generic_competence_attributes
   resources :generic_competences
   resources :competition_categories

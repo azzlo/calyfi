@@ -1,0 +1,60 @@
+<%= form_for([@teacher_group, competence_period]) do |f| %>
+  <% if competence_period.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(competence_period.errors.count, "error") %> prohibited this competence_period from being saved:</h2>
+
+      <ul>
+      <% competence_period.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-lg-4 ">
+      <div class="form-group">
+        <%= f.label :start_at, 'Inicia' %>
+        <%= f.date_select :start_at, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center">
+    <div class="col-lg-4 ">
+      <div class="form-group">
+        <%= f.label :end_at, 'Finaliza' %>
+        <%= f.date_select :end_at, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 ">
+      <div class="form-group">
+        <%= f.label :title, 'Titulo' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 ">
+      <div class="form-grouṕ">
+        <%= f.label :description, 'Descripción' %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div hidden class="field">
+    <%= f.label :teacher_group_id %>
+    <%= f.text_area :teacher_group_id %>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-4 text-right">
+      <br>
+      <%= f.submit class: 'btn btn-primary btn-lg' %>
+    </div>
+  </div>
+<% end %>

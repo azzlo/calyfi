@@ -1,0 +1,10 @@
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  
+  <h1>Nuevo periodo de competencia</h1>
+
+  <%= render 'form', competence_period: @competence_period %>
+
+  <%= link_to '<= Grupo', teacher_group_path(@teacher_group) %>
+</div>
+<%= render 'partials/footer' %>

@@ -1,0 +1,88 @@
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+
+  <div class="row">
+      <div class="col-md-4">
+        
+        <p>
+          <strong>Asignatura:</strong>
+          <%= @teacher_group.subject %>
+        </p>
+
+        <p>
+          <strong>Docente:</strong>
+          <%= current_user.teacher.full_name %>
+        </p>
+
+        <p>
+          <strong>Especialidad:</strong>
+          <%= @teacher_group.group.specialty %>
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <p>
+          <strong>Grupo:</strong>
+          <%= @teacher_group.group.full_name %>
+        </p>
+
+        <p>
+          <strong>Generación:</strong>
+          <%= '??????' %>
+        </p>
+
+        <p>
+          <strong>Periodo:</strong>
+          <%= @teacher_group.period %>
+        </p>
+      </div>
+    </div>
+
+  <h2>Competencias del periodo
+    <span class="badge badge-info">
+      <%= @competence_period.start_at.day.to_s + ' ' + l(@competence_period.start_at, format: '%B').capitalize %> - 
+      <%=  @competence_period.end_at.day.to_s + ' ' + 
+        l(@competence_period.end_at, format: '%B').capitalize%>
+          
+    </span>
+  </h2>
+  <strong>
+    <%= @competence_period.title %>
+  </strong>
+  <br>
+  <i>
+    <%= @competence_period.description %>
+  </i>
+  <br>
+  <%= link_to '[editar]', edit_teacher_group_competence_period_path(@competence_period) %>
+  <br>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th width="130" >Matricula</th>
+        <th>Nombre de alumno</th>
+        <th>Competencias</th>
+        <th>Actividades</th>
+        <th>Observaciones</th>
+        <th>Desempeño</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @teacher_group.group.students.each do |student| %>
+        <tr>
+          <td><%= student.enrollment %></td>
+          <td><%= student.full_name -%></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+
+</div>
+<%= render 'partials/footer' %>

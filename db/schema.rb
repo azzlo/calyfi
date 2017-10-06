@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922201728) do
+ActiveRecord::Schema.define(version: 20171006161924) do
+
+  create_table "competence_periods", force: :cascade do |t|
+    t.date     "start_at"
+    t.date     "end_at"
+    t.string   "title"
+    t.string   "description"
+    t.integer  "teacher_group_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["teacher_group_id"], name: "index_competence_periods_on_teacher_group_id"
+  end
 
   create_table "competences", force: :cascade do |t|
     t.string   "name"
