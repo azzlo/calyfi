@@ -41,7 +41,10 @@
     </div>
 
     <div class="col-md-4">
-      <%= link_to '+ Periodo', new_teacher_group_competence_period_path(@teacher_group) %>
+      <% @teacher_group.competence_periods.each do |period| %>
+        <%= link_to period.full_name, teacher_group_competence_period_path(@teacher_group, period), class: 'btn btn-primary btn-lg' %>
+      <% end %>
+      <%= link_to '+ Periodo', new_teacher_group_competence_period_path(@teacher_group), class: 'btn btn-secondary' %>
     </div>
 
     <br>
