@@ -1,5 +1,10 @@
-<h1>New Competence</h1>
+<%= render 'partials/header' %>
+<div class="contenedor-principal">
+  
+  <h1>Nueva competencia para el periodo <span class="badge badge-info"><%= @competence_period.full_name %></span></h1>
 
-<%= render 'form', competence: @competence %>
+  <%= render 'form', competence: @competence %>
 
-<%= link_to 'Back', competences_path %>
+  <%= link_to 'Atras', [@teacher_group, @competence_period] %>
+</div>
+<%= render 'partials/footer' %>

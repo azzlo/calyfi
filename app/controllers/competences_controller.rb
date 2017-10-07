@@ -1,5 +1,8 @@
 class CompetencesController < ApplicationController
   before_action :set_competence, only: [:show, :edit, :update, :destroy]
+  before_action :set_teacher_group, only: [:new, :show, :create, :edit, :update, :destroy]
+  before_action :set_competence_period, only: [:new, :show, :create, :edit, :update, :destroy]
+
 
   # GET /competences
   # GET /competences.json
@@ -14,7 +17,7 @@ class CompetencesController < ApplicationController
 
   # GET /competences/new
   def new
-    @competence = Competence.new
+    @competence = @competence_period.competences.build
   end
 
   # GET /competences/1/edit
@@ -24,14 +27,14 @@ class CompetencesController < ApplicationController
   # POST /competences
   # POST /competences.json
   def create
-    @competence = Competence.new(competence_params)
+    @competence = @competence_period.competences.build(competence_params)
 
     respond_to do |format|
       if @competence.save
-        format.html { redirect_to @competence, notice: 'Competence was successfully created.' }
+        format.html { redirect_to [@teacher_group, @competence.competence_period], notice: 'Competence was successfully created.' }
         format.json { render :show, status: :created, location: @competence }
       else
-        format.html { render :new }
+        format.html { redirect_to new_teacher_group_competence_period_competence_path(@teacher_group, @competence_period) }
         format.json { render json: @competence.errors, status: :unprocessable_entity }
       end
     end
@@ -65,6 +68,14 @@ class CompetencesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_competence
       @competence = Competence.find(params[:id])
+    end
+
+    def set_teacher_group
+      @teacher_group = TeacherGroup.find(params[:teacher_group_id])
+    end
+
+    def set_competence_period
+      @competence_period = CompetencePeriod.find(params[:competence_period_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

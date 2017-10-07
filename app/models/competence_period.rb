@@ -1,5 +1,6 @@
 class CompetencePeriod < ApplicationRecord
   belongs_to :teacher_group
+  has_many :competences
 
   def full_name
     start_at.day.to_s + ' ' + \

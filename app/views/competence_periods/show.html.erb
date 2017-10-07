@@ -62,9 +62,7 @@
       <tr>
         <th width="130" >Matricula</th>
         <th>Nombre de alumno</th>
-        <th>Competencias</th>
-        <th>Actividades</th>
-        <th>Observaciones</th>
+        <th>Competencias <%= link_to '+ competencia', new_teacher_group_competence_period_competence_path(@teacher_group, @competence_period), class: 'btn btn-primary btn-sm' %></th>
         <th>Desempeño</th>
       </tr>
     </thead>
@@ -73,9 +71,13 @@
         <tr>
           <td><%= student.enrollment %></td>
           <td><%= student.full_name -%></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            <% @competence_period.competences.each do |c| %>
+              <span class="badge badge-pill badge-info">
+                <%= c.generic_competence_attribute.generic_competence.number.to_s + '.' + c.generic_competence_attribute.number.to_s %>
+              </span>
+            <% end %>
+          </td>
           <td></td>
         </tr>
       <% end %>
