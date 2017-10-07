@@ -42,23 +42,6 @@ ActiveRecord::Schema.define(version: 20171007015409) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "curriculums", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "specialty_id"
-    t.integer  "study_cycle_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["specialty_id"], name: "index_curriculums_on_specialty_id"
-    t.index ["study_cycle_id"], name: "index_curriculums_on_study_cycle_id"
-  end
-
-  create_table "evaluation_periods", force: :cascade do |t|
-    t.date     "start_at"
-    t.date     "end_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "generic_competence_attributes", force: :cascade do |t|
     t.integer  "number"
     t.text     "description"
@@ -88,7 +71,7 @@ ActiveRecord::Schema.define(version: 20171007015409) do
   end
 
   create_table "scores", force: :cascade do |t|
-    t.string   "score"
+    t.integer  "score"
     t.integer  "competence_id"
     t.integer  "student_id"
     t.datetime "created_at",    null: false
@@ -102,21 +85,6 @@ ActiveRecord::Schema.define(version: 20171007015409) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "student_subjects", force: :cascade do |t|
-    t.integer  "student_id"
-    t.integer  "subject_id"
-    t.float    "score"
-    t.boolean  "is_approved"
-    t.boolean  "is_active"
-    t.integer  "attempts"
-    t.integer  "study_cycle_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["student_id"], name: "index_student_subjects_on_student_id"
-    t.index ["study_cycle_id"], name: "index_student_subjects_on_study_cycle_id"
-    t.index ["subject_id"], name: "index_student_subjects_on_subject_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -134,33 +102,7 @@ ActiveRecord::Schema.define(version: 20171007015409) do
     t.integer  "group_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "curriculum_id"
-    t.integer  "study_cycle_id"
-    t.integer  "semester"
-    t.boolean  "is_graduated"
-    t.index ["curriculum_id"], name: "index_students_on_curriculum_id"
     t.index ["group_id"], name: "index_students_on_group_id"
-    t.index ["study_cycle_id"], name: "index_students_on_study_cycle_id"
-  end
-
-  create_table "study_cycles", force: :cascade do |t|
-    t.date     "start_at"
-    t.date     "end_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string   "name"
-    t.string   "code"
-    t.integer  "semester"
-    t.integer  "curriculum_id"
-    t.integer  "teacher_id"
-    t.integer  "dependency_subject_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-    t.index ["curriculum_id"], name: "index_subjects_on_curriculum_id"
-    t.index ["teacher_id"], name: "index_subjects_on_teacher_id"
   end
 
   create_table "teacher_groups", force: :cascade do |t|

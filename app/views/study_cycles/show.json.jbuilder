@@ -1,1 +1,0 @@
-json.partial! "study_cycles/study_cycle", study_cycle: @study_cycle

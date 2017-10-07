@@ -1,1 +1,0 @@
-json.array! @study_cycles, partial: 'study_cycles/study_cycle', as: :study_cycle
