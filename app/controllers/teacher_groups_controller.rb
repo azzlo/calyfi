@@ -1,6 +1,6 @@
 class TeacherGroupsController < ApplicationController
   before_action :set_teacher_group, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin, only: [:index, :edit, :update, :destroy, :new, :create]
   # GET /teacher_groups
   # GET /teacher_groups.json
   def index
@@ -65,6 +65,12 @@ class TeacherGroupsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher_group
       @teacher_group = TeacherGroup.find(params[:id])
+    end
+
+    def authenticate_admin
+      :authenticate_user!
+      flash[:alert] = "Acceso denegado"
+      redirect_to welcome_index_path unless current_user.admin_role
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

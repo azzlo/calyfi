@@ -1,5 +1,8 @@
 class ScoresController < ApplicationController
   before_action :set_score, only: [:show, :edit, :update, :destroy]
+  before_action :set_competence, only: [:index]
+  before_action :set_teacher_group, only: [:index]
+  before_action :set_competence_period, only: [:index]
 
   # GET /scores
   # GET /scores.json
@@ -65,6 +68,18 @@ class ScoresController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_score
       @score = Score.find(params[:id])
+    end
+
+    def set_competence
+      @competence = Competence.find(params[:competence_id])
+    end
+
+    def set_teacher_group
+      @teacher_group = TeacherGroup.find(params[:teacher_group_id])
+    end
+
+    def set_competence_period
+      @competence_period = CompetencePeriod.find(params[:competence_period_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

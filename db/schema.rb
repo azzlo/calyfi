@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171006232832) do
+ActiveRecord::Schema.define(version: 20171007015409) do
 
   create_table "competence_periods", force: :cascade do |t|
     t.date     "start_at"
@@ -85,6 +85,16 @@ ActiveRecord::Schema.define(version: 20171006232832) do
     t.string   "generation"
     t.integer  "semester"
     t.string   "letter"
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.string   "score"
+    t.integer  "competence_id"
+    t.integer  "student_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["competence_id"], name: "index_scores_on_competence_id"
+    t.index ["student_id"], name: "index_scores_on_student_id"
   end
 
   create_table "specialties", force: :cascade do |t|

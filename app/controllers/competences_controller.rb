@@ -45,7 +45,7 @@ class CompetencesController < ApplicationController
   def update
     respond_to do |format|
       if @competence.update(competence_params)
-        format.html { redirect_to @competence, notice: 'Competence was successfully updated.' }
+        format.html { redirect_to teacher_group_competence_period_competence_scores_url(@teacher_group, @competence_period, @competence), notice: 'Competence was successfully updated.' }
         format.json { render :show, status: :ok, location: @competence }
       else
         format.html { render :edit }
@@ -80,6 +80,8 @@ class CompetencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def competence_params
-      params.require(:competence).permit(:evidence, :evaluation_tool, :generic_competence_attribute_id, :percentage, :competence_period_id)
+      params.require(:competence).permit(
+        :evidence, :evaluation_tool, :generic_competence_attribute_id, :percentage, :competence_period_id,
+        scores_attributes: [:id, :score])
     end
 end

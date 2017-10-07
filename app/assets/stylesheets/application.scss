@@ -42,15 +42,30 @@ p{
   font-weight: normal;
 }
 
+table input{
+  border-style: none;
+  border-radius: 2em;
+  width: 2.8em;
+  text-align: right;
+}
+
 ul{
   &.my-menu{
     list-style: none;
   }
 }
 
+#fixSaveBtn{
+  position: fixed;
+  right: 3em;
+  bottom: 2em;
+  box-shadow: 1px 1px 8px black;
+}
+
 #navbar{
   background-color: white;
 }
+
 
 .contenedor-principal{
   background-color: white;

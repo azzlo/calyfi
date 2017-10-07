@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :scores
   resources :teacher_groups do
     resources :competence_periods do
-      resources :competences
+      resources :competences do 
+        resources :scores
+      end
     end
   end
   resources :generic_competence_attributes
