@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :scores
   resources :teacher_groups do
     resources :competence_periods do
       resources :competences
